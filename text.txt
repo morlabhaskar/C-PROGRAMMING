@@ -1,3 +1,15 @@
 program excecusion :-
-path + "file.c"
+path + gcc "file.c"
 path + ".\a.exe"
+
+
+control statements :-
+1.if-else
+2.switch
+3.while loop
+4.for loop
+5.do-while loop
+6.neasted loop
+7.infinite loop
+8.Break
+9.Continue
