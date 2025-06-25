@@ -1,0 +1,9 @@
+{
+    "launch": {
+
+        // "configurations": [],
+        // "compounds": []
+    },
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.inlineSuggest.enabled": false
+}
