@@ -13,4 +13,5 @@ int main() {
     printf("q = %x\n",&b);
     printf("c = %d",c);
     return 0;
+    
 }
