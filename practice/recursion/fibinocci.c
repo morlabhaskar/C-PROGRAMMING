@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include<unistd.h>
+
 int fib(int);
 int main(){
     int nterms;
@@ -6,6 +8,8 @@ int main(){
     scanf("%d",&nterms);
     for(int i=0;i<nterms;i++){
         printf("%d\t",fib(i));
+        fflush(stdout);
+        usleep(500000);
     }
     printf("\n");
 }
