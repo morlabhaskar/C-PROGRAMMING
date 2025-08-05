@@ -35,15 +35,38 @@
 
 // Boolean data type
 // The C programming language does not have a built-in boolean data type.
+// #include <stdio.h>
+// #include <stdbool.h>  // Import the boolean header file 
+
+// int main() {
+//   bool isProgrammingFun = true;
+//   bool isFishTasty = false;
+//   printf("%d\n", isProgrammingFun);  // Returns 1 (true)
+//   printf("%d", isFishTasty);         // Returns 0 (false)
+
+//   return 0;
+// }
+
+
 #include <stdio.h>
-#include <stdbool.h>  // Import the boolean header file 
 
-int main() {
-  bool isProgrammingFun = true;
-  bool isFishTasty = false;
-  printf("%d\n", isProgrammingFun);  // Returns 1 (true)
-  printf("%d", isFishTasty);         // Returns 0 (false)
+int main()
+{
+    int n=5,a,b,A,B,x=5,s=0;
+    for(a=1;a<=n;a++){
+        for(b=-(n-1);b<n;b++){
+            if((x <= a) && (s <= n)){
+              printf("*");
+              s++;
+            }
+            else{
+              printf(" ");
+            }
+            x--;
+        }
+        x = 5;
 
-  return 0;
+        printf("\n");
+    }
 }
 
