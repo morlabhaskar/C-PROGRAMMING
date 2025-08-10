@@ -68,8 +68,32 @@ int main()
 		else if((choice=='q')||(choice=='Q'))
 		           break;
 		else 
-			printf("error:invalid entry\n")
+			printf("error:invalid entry\n");
 	}//while
 }//main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
