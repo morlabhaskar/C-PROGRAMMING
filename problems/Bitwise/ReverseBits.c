@@ -8,7 +8,6 @@ int main(){
             data ^= (1<<left);
             data ^= (1<<right);
         }
-        
     }
     for(int bit=31;bit>=0;bit--){
         printf("%d",(data>>bit)&1);
