@@ -20,5 +20,6 @@ int main(){
         index = bit+cnt;
         res = cnt;
     }
+    printf("%d",bit);
     printf("\nLongest Series at %d, Count %d",index,res);
 }

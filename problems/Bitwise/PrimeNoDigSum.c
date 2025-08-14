@@ -20,7 +20,6 @@ int main(){
                 printf("%d,",i);
                 cnt++;
             }
-
         }
         if(cnt == N){
             break;

@@ -1,3 +1,4 @@
+//Revese bits of a Given Number
 #include<stdio.h>
 int main(){
     int left,right,data,num;
