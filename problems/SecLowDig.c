@@ -1,4 +1,4 @@
-//Second Highest Digit in a Given Integer
+//Second Lowest Digit in a Given Integer
 #include<stdio.h>
 int main(){
     int num,low=9,seclow=9,cnt=0;
