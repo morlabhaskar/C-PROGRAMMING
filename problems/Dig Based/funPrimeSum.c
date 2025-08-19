@@ -1,6 +1,7 @@
 #include<stdio.h>
 int checkPrime(int);
 int sumDigits(int,int);
+
 int main(){
     int min,max,dig,cnt=0;
     printf("Enter Min Number :");scanf("%d",&min);
@@ -18,6 +19,7 @@ int main(){
         printf("No Prime Numbers Between the given Range Sum equal %d",dig);
     }
 }
+
 int checkPrime(int data){
     int cnt=0;
     for(int j=1;j<=data;j++){
@@ -32,6 +34,7 @@ int checkPrime(int data){
         return 0;
     }
 }
+
 int sumDigits(int data,int dig){
     int cnt = 0;
     while(data){
