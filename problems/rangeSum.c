@@ -10,7 +10,9 @@ int main(){
 int rangeSum(int min,int max){
     int cnt=0;
     for(int i=min;i<=max;i++){
-        cnt += i;
+        if(i%2==0){
+            cnt += i;
+        }
     }
     return cnt;
 }
