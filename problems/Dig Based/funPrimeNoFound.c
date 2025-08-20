@@ -16,7 +16,7 @@ int main(){
         }
     }
     if(cnt==0){
-        printf("No Prime Numbers Between the given Range Sum equal %d",dig);
+        printf("No Prime Numbers Between the given Range Digit Found of %d",dig);
     }
 }
 
