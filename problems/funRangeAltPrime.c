@@ -2,8 +2,10 @@
 int checkPrime(int);
 int main(){
     int min,max,cnt=0;
-    printf("Enter a Min Number :");scanf("%d",&min);
-    printf("Enter a Max Number :");scanf("%d",&max);
+    printf("Enter a Min Number :");
+    scanf("%d",&min);
+    printf("Enter a Max Number :");
+    scanf("%d",&max);
     for(int i=min;i<=max;i++){
         if(checkPrime(i)){
             if(cnt%2==0){

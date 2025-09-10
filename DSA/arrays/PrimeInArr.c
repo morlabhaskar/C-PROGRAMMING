@@ -8,12 +8,12 @@ int main(){
     }
     printf("Array Elements are :\n");
     for(int i=0;i<n;i++){
-        printf("%d",arr[i]);
+        printf("%d,",arr[i]);
     }
     printf("Prime Elements in Array :\n");
     for(int i=0;i<n;i++){
         if(checkPrime(arr[i])){
-            printf("%d\t",i);
+            printf("%d\t",arr[i]);
             cnt++;
         }
     }
