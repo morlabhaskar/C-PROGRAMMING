@@ -8,13 +8,11 @@ int main(){
         if(checkPrime(i)){
             if(cnt%2==0){
                 printf("%d,",i);
-                
             }
             cnt++;
         }
     }
 }
-
 int checkPrime(int data){
     int cnt=0;
     for(int i=1;i<=data;i++){
