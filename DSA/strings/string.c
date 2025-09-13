@@ -15,5 +15,5 @@ int main() {
         count++;
         i++;
     }
-    printf("Length of String is : %d",count);
+    printf("Length of String is : %d",name);
 }
