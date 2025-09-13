@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
-void print(char* ptr){
+#include<ctype.h>
+void print(char *ptr){
     for(int i=0;ptr[i] != '\0';i++){
         printf("%c\t",ptr[i]);
     }
@@ -12,17 +13,16 @@ void print1(char *ptr1){
     }
 }
 int isVowel(char ch){
+    ch = tolower(ch);
     if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'){
         return 1;
     }
-    else{
-        return 0;
-    }
+    return 0;
 }
 int main(){
-    int str[30];
+    char str[30];
     printf("Enter a String :\n");
-    fgets(str,20,stdin);
+    fgets(str,sizeof(str),stdin);
     if(str[strlen(str)-1] == '\n'){
         str[strlen(str)-1] = '\0';
     }
