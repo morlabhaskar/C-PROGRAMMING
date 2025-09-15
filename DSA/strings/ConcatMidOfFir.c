@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<string.h>
 int main(){
-    char str1[30],str2[30];
+    char str1[30],str2[30],str3[50];
     printf("Enter a String1 :\n");
     fgets(str1,sizeof(str1),stdin);
 
@@ -16,16 +16,27 @@ int main(){
         str2[strlen(str2)-1] = '\0';
     }
 
-    printf("\n Output is : \n");
-    int total_len = strlen(str1) + strlen(str2),one=0,two=0;
-    for(int i=0;i<total_len;i++){
-        if(i%2 == 0){
-            printf("%c",str1[one]);
-            one++;
+    printf("Output is : \n");
+    int tlen = strlen(str1)+strlen(str2),mid = strlen(str1)/2;
+    printf("%d\n",tlen);
+    printf("%d\n",mid);
+    int x = 0,a=0,z=mid+strlen(str2);
+    for(int i=0;i<=tlen;i++){
+        if(i<mid){
+            str3[x] = str1[i];
+            x++;
         }
-        else{
-            printf("%c",str2[two]);
-            two++;
+        if(i>=mid && a<=strlen(str2)){
+            str3[i] = str2[a];
+            a++;
         }
+        if(a==strlen(str2)){
+            str3[i] = str1[z];
+            z++;
+        }
+    }
+    printf("%s\n",str3);
+    for(int j=0;str3[j]!='\0';j++){
+        printf("str3[%d]=%c\n",j,str3[j]);
     }
 }
