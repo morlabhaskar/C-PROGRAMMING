@@ -1,4 +1,4 @@
-//wap to remove all the vowels from the given string
+//wap to print Alternate vowels in the given string
 #include<stdio.h>
 #include<string.h>
 #include<ctype.h>
@@ -15,6 +15,7 @@ int is_vowel(char ch){
 }
 int main(){
     char str[30];
+    int cnt=0;
     printf("Enter a String :\n");
     fgets(str,sizeof(str),stdin);
 
@@ -24,16 +25,13 @@ int main(){
     }
     for(int i=0;str[i];i++){
         if(is_vowel(str[i])){
-            memmove(str+i,str+i+1,strlen(str+i+1)+1);
-            i--;
+            if(cnt%2==0){
+                memmove(str+i,str+i+1,strlen(str+i+1)+1);
+                i--;
+            }
+            cnt++;
         }
+        
     }
     printf("%s\n",str);
-
-    // if(cnt == 0){
-    //     printf("There is No Vowels are in above Given String\n");
-    // }
-    // else{
-    //     printf("%s\n",str);
-    // }
 }
