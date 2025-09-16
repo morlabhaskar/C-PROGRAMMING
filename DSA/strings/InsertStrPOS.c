@@ -1,4 +1,5 @@
 //Insert a String At Perticular Position at First String
+
 //With Temp Variable
 // #include<stdio.h>
 // #include<string.h>
@@ -67,3 +68,13 @@ int main(){
     }
     printf("%s\n",str1);
 }
+
+
+
+
+
+
+
+
+
+
