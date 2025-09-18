@@ -18,7 +18,8 @@ int main(){
             }
         }
         memmove(str+i,str+i+1,strlen(str+i+1)+1);
-        // i--;
+        
+        
         
     }
     printf("%s\n",str);
