@@ -14,19 +14,21 @@ int is_vowel(char ch){
     return 0;
 }
 
-void print_first_vowel(char *str){
+char print_first_vowel(char *str){
     for(int i=0;str[i];i++){
         if(is_vowel(str[i])){
-            printf("First Vowel in \"%s\" is \"%c\"\n",str,str[i]);
+            // printf("First Vowel in \"%s\" is \"%c\"\n",str,str[i]);
+            return str[i];
             break;
         }
     }
 }
 
-void print_last_vowel(char *str){
+char print_last_vowel(char *str){
     for(int i=strlen(str)-1;str[i];i--){
         if(is_vowel(str[i])){
-            printf("Last Vowel in \"%s\" is \"%c\"\n",str,str[i]);
+            // printf("Last Vowel in \"%s\" is \"%c\"\n",str,str[i]);
+            return str[i];
             break;
         }
     }
@@ -34,6 +36,7 @@ void print_last_vowel(char *str){
 
 int main(){
     char str[30];
+    char first,last;
     printf("Enter a String :\n");
     fgets(str,sizeof(str),stdin);
 
@@ -41,7 +44,9 @@ int main(){
     if(str[strlen(str)-1] == '\n'){
         str[strlen(str)-1] = '\0';
     }
-    print_first_vowel(str);
-    print_last_vowel(str);
+    first = print_first_vowel(str);
+    last = print_last_vowel(str);
+    printf("First Vowel in \"%s\" is \"%c\"\n",str,first);
+    printf("Last Vowel in \"%s\" is \"%c\"\n",str,last);
 
 }
