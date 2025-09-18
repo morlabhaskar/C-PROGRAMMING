@@ -6,6 +6,15 @@
 #include<stdio.h>
 #include<string.h>
 
+char* my_strchr(char *ptr,char ch){
+    while((*ptr) != '\0'){
+        if((*ptr)==ch){
+            return ptr;
+        }
+        ptr++;
+    }
+}
+
 int main(){
     char str[30],ch;
     char *ptr = NULL;
@@ -18,7 +27,8 @@ int main(){
     }
     ch = getchar();
     ptr = str;
-    ptr = strchr(str,ch);
+    // ptr = strchr(str,ch);
+    ptr = my_strchr(str,ch);
     if(ptr == NULL){
         printf("Character Not Found\n");
     }
