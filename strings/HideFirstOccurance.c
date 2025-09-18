@@ -1,8 +1,4 @@
-//Introduction of strchr() Pre-defined Function
-//char *strchr(const char *s, int c);
-
-//The strchr() function returns a pointer to the first occurrence of the character ch in the string str.
-
+//wap to hide the first occurance of given charcter in the given string
 #include<stdio.h>
 #include<string.h>
 
@@ -27,13 +23,14 @@ int main(){
         str[strlen(str)-1] = '\0';
     }
     ch = getchar();
-    ptr = str;
     // ptr = strchr(str,ch);
     ptr = my_strchr(str,ch);
     if(ptr == NULL){
         printf("Character Not Found\n");
     }
     else{
-        printf("Character Found at Index : %d",ptr-str);
+        printf("Character Found at Index : %d\n",ptr-str);
+        memset(ptr,'*',1);
     }
+    printf("%s\n",str);
 }
