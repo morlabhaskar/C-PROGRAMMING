@@ -2,13 +2,30 @@
 #include<stdio.h>
 #include<string.h>
 
+//Function is using String Pointer Indexing Method to modified the reverse string
+// void reverse_string(char *ptr){
+//     int len = strlen(ptr),left = 0,right = len-1;
+//     while(left<right){
+//         if(ptr[left] != ptr[right]){
+//             int temp = ptr[left];
+//             ptr[left] = ptr[right];
+//             ptr[right] = temp;
+//         }
+//         left++;
+//         right--;
+//     }
+// }
+
+//Function is using String Pointer Addressing Method to modified the reverse string
 void reverse_string(char *ptr){
-    int len = strlen(ptr),left = 0,right = len-1;
+    char *left = NULL,*right = NULL,temp;
+    left = ptr;
+    right = ptr+(strlen(ptr)-1);
     while(left<right){
-        if(ptr[left] != ptr[right]){
-            int temp = ptr[left];
-            ptr[left] = ptr[right];
-            ptr[right] = temp;
+        if((*left) != (*right)){
+            temp = *left;
+            *left = *right;
+            *right = temp;
         }
         left++;
         right--;
