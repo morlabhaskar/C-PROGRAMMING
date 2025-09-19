@@ -1,4 +1,4 @@
-//wap to Hide the first occurance of given charcter in the given string
+//wap to Hide the All occurance of given character in the given string
 #include<stdio.h>
 #include<string.h>
 
@@ -23,15 +23,9 @@ int main(){
         str[strlen(str)-1] = '\0';
     }
     ch = getchar();
-    // ptr = strchr(str,ch);
-    ptr = my_strchr(str,ch);
-    if(ptr == NULL){
-        printf("Character Not Found\n");
-    }
-    else{
-        printf("Character Found at Index : %d\n",ptr-str);
-        //void *memset(void *s, int c, size_t n);
+    while((ptr=my_strchr(str,ch))!=NULL){
         memset(ptr,'*',1);
+        ptr++;
     }
     printf("%s\n",str);
 }
