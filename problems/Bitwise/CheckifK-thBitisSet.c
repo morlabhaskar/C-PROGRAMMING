@@ -15,7 +15,6 @@ int isKthBitSet(int n, int k) {
 int main() {
     int n, k;
     scanf("%d %d", &n, &k);
-    // isKthBitSet(n, k);
     printf("%d", isKthBitSet(n, k));
     return 0;
 }
