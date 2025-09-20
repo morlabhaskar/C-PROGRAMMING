@@ -20,13 +20,12 @@ int main(){
     for(int i=0;i<n;i++){
         scanf("%d",&arr[i]);
     }
-    int len = sizeof(arr)/sizeof(arr[0]);
     printf("Before Sorting Elements are :\n");
     for(int i=0;i<n;i++){
         printf("%d ",arr[i]);
     }
 
-    bubble_sort(arr,len);
+    bubble_sort(arr,n);
 
     printf("\nAfter Sorting Elements are :\n");
     for(int i=0;i<n;i++){
