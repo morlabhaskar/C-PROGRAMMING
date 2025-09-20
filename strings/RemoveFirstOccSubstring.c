@@ -1,4 +1,4 @@
-//WAP to Hide all Occurance substring in a given string.
+//WAP to Remove First Occurance substring in a given string.
 #include<stdio.h>
 #include<string.h>
 int main(){
@@ -19,18 +19,8 @@ int main(){
     }
     ptr=str;
     ptr = strstr(ptr,sub);
-    printf("%s\n",str);
-    while((ptr = strstr(ptr,sub))!=NULL){
-        memset(ptr,'*',strlen(sub));
-        ptr = ptr+strlen(sub);
+    if(ptr!=NULL){
+        memmove(ptr,ptr+strlen(sub),strlen(ptr+strlen(sub))+1);
     }
     printf("%s\n",str);
 }
-
-
-/*Enter a String :
-    nanighdhdsnani
-Enter a SubString :
-    nani
-nanighdhdsnani
-o/p : ****ghdhds*****/
