@@ -1,11 +1,26 @@
 //WAP Reverse Alternate Occurance SubStrings in a given String
 #include<stdio.h>
 #include<string.h>
+// void reverse_substring(char *ptr1,int sub){
+//     char *left = ptr1;
+//     char *right = ptr1=+strlen(sub)-1;
+//     char temp;
+//     while(left<right){
+//         if((*left)!=(*right)){
+//             temp = *left;
+//             *left = *right;
+//             *right = temp;
+//         }
+//         left++;
+//         right--;
+//     }
+//     printf("Len=%d\n",strlen(sub));
+// }
 int main(){
     char str[100],*ptr=NULL,sub[30],temp[30];
     int cnt=0,i=0;
     printf("Enter a String :\n");
-    fgets(str,sizeof(str),stdin);////ananighnanidfnani
+    fgets(str,sizeof(str),stdin);//ananighnanidfnani
     printf("Enter a Sub String :\n");
     fgets(sub,sizeof(sub),stdin);//nani
     if(str[strlen(str)-1]=='\n'){
@@ -18,11 +33,12 @@ int main(){
         temp[i]=sub[j];
         i++;
     }
-    printf("temp = \"%s\"",temp);
+    printf("temp = \"%s\"\n",temp);
     ptr=str;
     while((ptr=strstr(ptr,sub))!=NULL){
         if(cnt%2==0){
             strncpy(ptr,temp,strlen(sub));
+            // reverse_substring(ptr,sub);
             ptr = ptr+strlen(sub);
         }
         else{
