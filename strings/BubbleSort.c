@@ -10,7 +10,7 @@ int main(){
         str[strlen(str)-1] = '\0';
     }
 
-    for(int i=strlen(str)-1;i>=1;i--){
+    for(int i=strlen(str)-1;i>=1;i--){//bcda
         for(int j=0;j<i;j++){
             if(str[j]>str[j+1]){
                 temp = str[j];
