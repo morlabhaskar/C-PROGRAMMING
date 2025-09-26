@@ -1,4 +1,4 @@
-//
+//WAP to check the sum of the odd digits in element is prime
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
