@@ -1,4 +1,4 @@
-//WAP to Remove Extra Spaces in a given string.
+//WAP to Remove Space at Beginning in a given string.
 #include<stdio.h>
 #include<string.h>
 int main(){
@@ -12,14 +12,8 @@ int main(){
         str[strlen(str)-1] = '\0';
     }
     ptr=str;
-    while((*ptr)!='\0'){
-        if((*ptr)==' '){
-            if((*(ptr+1))==' '){
-                memmove(ptr,ptr+1,strlen(ptr+1)+1);
-                ptr--;
-            }
-        }
-        ptr++;
+    while((*ptr)==' '){
+        memmove(ptr,ptr+1,strlen(ptr+1)+1);
     }
     printf("%s\n",str);
 }
