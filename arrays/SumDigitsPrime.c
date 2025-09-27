@@ -28,12 +28,12 @@ int main(){
     printf("Enter %d Array Elements :\n",n);
     srand(time(0));
     for(int i=0;i<n;i++)
-        arr[i] = rand()%(100-10+1)+10;//rand()%(MAX-MIN+1)+MIN
+        arr[i] = rand()%(200-10+1)+10;//rand()%(MAX-MIN+1)+MIN
     printf("Array Elements are :\n");
     for(int i=0;i<n;i++)
         printf("%d,",arr[i]);
     printf("\nPrime Elements in Array :\n");
     for(int i=0;i<n;i++)
-        if(sum_of_digits(arr[i]))
+        if(sum_of_digits(arr[i]) && checkPrime(arr[i]))
             printf("%d\t",arr[i]);
 }
