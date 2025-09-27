@@ -19,14 +19,14 @@ int main(){
     }
     printf("\nArray Prime Count is : %d\n",cnt);
 }
-int checkPrime(int a){
-    int x = 0;
-    for(int i=1;i<=a;i++){
-        if(a%i == 0){
-            x++;
+int checkPrime(int num){
+    int cnt = 0;
+    for(int i=1;i<=num;i++){
+        if(num%i == 0){
+            cnt++;
         }
     }
-    if(x == 2){
+    if(cnt == 2){
         return 1;
     }
     else{
