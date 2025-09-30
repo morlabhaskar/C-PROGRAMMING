@@ -1,11 +1,13 @@
+//WAP to Reverse Each Word In a Given String.
 #include<stdio.h>
 #include<string.h>
 void reverse_word(char *p){
     char *left=p,*right=p+strlen(p)-1;
     while(left<right){
-        char temp = *left;
-        *left = *right;
-        *right = temp;
+        // char temp = *left;
+        // *left = *right;
+        // *right = temp;
+        *left ^= *right ^= *left ^= *right;
         left++;
         right--;
     }
