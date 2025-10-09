@@ -197,13 +197,13 @@
 //   printf("%d",b[-1]); 
 // }
 // #include<stdio.h>
-void main()
-{
-int a[5]={1,2,3,4,5};
-int *ptr=(int *)(&a+1);
-// ptr-1;
-printf("%d %d ",*(a+1),*(ptr-5));
-}
+// void main()
+// {
+// int a[5]={1,2,3,4,5};
+// int *ptr=(int *)(&a+1);
+// // ptr-1;
+// printf("%d %d ",*(a+1),*(ptr-5));
+// }
 // int main() {
 //   int A[]={1,2,3,4,5}; 
 //   int x; 
@@ -260,3 +260,20 @@ printf("%d %d ",*(a+1),*(ptr-5));
 //   printf("%d ",*ptr); 
 //   return 0; 
 // }
+#include<stdio.h>
+int main()
+{
+  int x=10,y=15,z=320;
+  char*ptr=&x;
+  ++ptr;
+  ++ptr;
+  printf("%d\n",ptr[2]);
+  printf("%d\n",*(ptr+2));
+  printf("%d\n",((((ptr+2)-2)[-2])));
+  ptr[2]=-1;
+   ptr[6]=-1;
+  printf("x=%d\n",x);
+  printf("y=%d\n",y);
+  printf("z=%d\n",z);
+  
+}
