@@ -24,7 +24,6 @@
 int is_bit_set(int reg, int pos) {
     int flag = 0;
     int data = reg;
-    
     for(int i=1;i<10;i++){
         int bit = data%10;
         // if(bit == pos){
@@ -32,11 +31,8 @@ int is_bit_set(int reg, int pos) {
         //         flag=1;
         //     }
         // }
-
         data /= 10;
-
     }
-
     // for(int bit=9;bit;bit--){
     //     if((bit==pos)&&((reg>>bit)&1)){
     //         flag=1;
@@ -45,12 +41,10 @@ int is_bit_set(int reg, int pos) {
     // }
     flag;
 }
-
 int main() {
     int reg, pos;
     scanf("%d %d", &reg, &pos);
     printf("%d %d\n", reg,pos);
-
     printf("%d", is_bit_set(reg, pos));
     return 0;
 }

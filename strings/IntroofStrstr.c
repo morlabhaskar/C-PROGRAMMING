@@ -14,9 +14,7 @@ char *my_strstr(char *ptr,char *sub){
                     break;
                 }
             }
-            if(flag){
-                return ptr+i;
-            }
+            if(flag) return ptr+i;
         }
     }
     return NULL;
@@ -53,5 +51,5 @@ int main(){
     // }
     // else{
     //     printf("SubString Found at Index : %d\n",ptr-str);
-    // } 
+    // }
 }
