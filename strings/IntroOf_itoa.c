@@ -6,6 +6,7 @@
 //base → the number system (2 to 36)
 #include<stdio.h>
 #include<string.h>
+#include<stdlib.h>
 
 int main(){
     int num;

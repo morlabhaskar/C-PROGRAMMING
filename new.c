@@ -261,19 +261,167 @@
 //   return 0; 
 // }
 #include<stdio.h>
-int main()
-{
-  int x=10,y=15,z=320;
-  char*ptr=&x;
-  ++ptr;
-  ++ptr;
-  printf("%d\n",ptr[2]);
-  printf("%d\n",*(ptr+2));
-  printf("%d\n",((((ptr+2)-2)[-2])));
-  ptr[2]=-1;
-   ptr[6]=-1;
-  printf("x=%d\n",x);
-  printf("y=%d\n",y);
-  printf("z=%d\n",z);
-  
-}
+// int main()
+// {
+//   int x=10,y=15,z=320;
+//   char*ptr=&x;
+//   ++ptr;
+//   ++ptr;
+//   printf("%d\n",ptr[2]);
+//   printf("%d\n",*(ptr+2));
+//   printf("%d\n",((((ptr+2)-2)[-2])));
+//   ptr[2]=-1;
+//    ptr[6]=-1;
+//   printf("x=%d\n",x);
+//   printf("y=%d\n",y);
+//   printf("z=%d\n",z);
+// }
+
+// #define call(x,y) x##y
+// void main(){
+// int x=5,y=10,xy=20;
+// printf("%d",xy+call(x,y));
+// }
+
+// #define FALSE -1
+// #define TRUE 1
+// #define NULL 0
+// main()
+// {
+// if(NULL)
+// puts("NULL");
+// else if(FALSE)
+// puts("TRUE");
+// else
+// puts("FALSE");
+// }
+
+// #include<stdio.h>
+// #define DC 10
+// void main()
+// {
+// #ifdef DC
+// printf("DC=%d ",DC);
+// #else
+// printf("not defined");
+// #endif
+// #undef DC
+// #define DC 66
+// printf("DC=%d ",DC);
+// }
+
+// #include<stdio.h>
+// #define MAX printf("Hello ");
+// printf("Hi ");
+// #define MIN printf("Bye ");
+// main()
+// {
+// if(5>10)
+// MAX
+// else
+// MIN
+// }
+
+// #include<stdio.h>
+// main()
+// {
+// #define i 10
+// #if i==10
+// printf("True");
+// #else
+// printf("False ");
+// #endif
+// }
+
+// #include<stdio.h>
+// #define x 5+5
+// int main()
+// {
+// int i;
+// i = x * x * x;
+// printf("%d ",i);
+// }
+
+// #include<stdio.h>
+// #define _vec(x) ++x * ++x
+// int main()
+// {
+// int a = 3, z;
+// z = ++a * ++a;
+// a -= 3;
+// printf("%d %d", _vec(a), z);
+// }
+
+// #include<stdio.h>
+// #define v 9
+// main()
+// {
+// int b;
+// #define v 10
+// b=v*5;
+// printf("%d",b);
+// }
+
+// #define paste(a,b) a##b 
+// main() 
+// {
+//  int a=3,b=6;
+//  Printf("%d", paste(a,b));
+//  }
+
+// #define CUBE(x) x*x*x
+// main()
+// {
+// int a,b=3;
+// a=CUBE(b++);
+// printf("%d %d",a,b);
+// }
+
+// #include<stdio.h>
+// #define MAX printf("Hello ");
+// #define MIN printf("Bye ");
+// int main()
+// {
+//     if(5 > 10)
+//         MAX
+//     else
+//         MIN
+//     return 0;
+// }
+
+// #include<stdio.h>
+// #define LOOP(a) int i;\
+// for(i=1;i<=a;i++);\
+// printf("%d ",i);
+// void main()
+// {
+// LOOP(5);
+// }
+
+// #include<stdio.h>
+// #define Macro(a) printf("Macro=%d",a);
+// void main()
+// {
+// Macro(10);
+// }
+
+// #include<stdio.h>
+// #define NODE(a) a*10+2
+// void main()
+// {
+// int a=NODE(2)*2;
+// printf("%d ",a);
+// }
+
+// #define sum(a,b,c) a+b+c
+// #define avg(a,b,c) sum(a,b,c)/3
+// #define geq(a,b,c) avg(a,b,c) >= 60
+// #define lee(a,b,c) avg(a,b,c) <= 60
+// #define des(a,b,c,d) (d==1?geq(a,b,c):lee(a,b,c))
+// main () {
+// int num = 70;
+// char ch = '0';
+// float f = 2.0;
+// if des(num,ch,f,0) puts ("lee..");
+// else puts("geq...");
+// }
