@@ -1,16 +1,14 @@
-//Set or Clear a Specific Bit in a Register
-/*Input Format :
-    An 8-bit integer (0-255) representing the register value.
-    An integer (0-7) representing the bit position.
-    An integer (0 or 1) representing the operation (1 to set, 0 to clear the bit).
-
-Output Format :
-    The modified register value after setting/clearing the bit.*/
-    
+//Set or Clear a Specific Bit in a Register  
 #include <stdio.h>
-int modifyBit(int reg, int pos, int mode) {
+#include <string.h>
+void int_to_binary(int data){
+    for(int bit=31;bit>=0;bit--){
+        printf("%d ",(data>>bit)&1);
+    }
+}
+int modifyBit(int reg, int pos, char mode) {
     int data = reg;
-    if(mode==1){
+    if(mode=='s'){
         data |= (1<<pos);
     }
     else{
@@ -18,11 +16,17 @@ int modifyBit(int reg, int pos, int mode) {
     }
     return data;
 }
-
 int main() {
-    int reg;
-    int pos, mode;
-    scanf("%d %d %d", &reg, &pos, &mode);
-    printf("%d", modifyBit(reg, pos, mode));
-    return 0;
+    int reg,pos;
+    char mode;
+    printf("Enter Number :\n");
+    scanf("%d", &reg);
+    printf("Enter Position :\n");
+    scanf("%d",&pos);
+    printf("Enter Mode :\n\'s\' for Set Bit\n\'c\' for Clear Bit \n");
+    scanf(" %c",&mode);
+    int_to_binary(reg);
+    int result=modifyBit(reg,pos,mode);
+    printf("\n");
+    int_to_binary(result);
 }
