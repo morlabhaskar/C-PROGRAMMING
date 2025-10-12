@@ -425,3 +425,27 @@
 // if des(num,ch,f,0) puts ("lee..");
 // else puts("geq...");
 // }
+
+// #include<stdio.h>
+// #include<string.h>
+// int main()
+// {
+//     char str[] = "VECTOR\0\INDIA\0";
+//     printf("%s\n", str);
+//     return 0;
+// }
+
+#include<stdio.h>
+void main(){
+char arr[11]="The African Queen";
+printf("%s",arr);
+}
+
+// #include<stdio.h>
+// int main()
+// {
+//     char p[] = "%d\n";
+//     p[1] = 'c';
+//     printf(p, 65);
+//     return 0;
+// }
