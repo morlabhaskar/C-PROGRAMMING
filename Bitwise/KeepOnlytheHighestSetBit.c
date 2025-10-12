@@ -23,7 +23,8 @@ int highest_set_bit(int reg) {
 
 int main() {
     int reg;
-    scanf("%d", &reg);
+    printf("Enter a Number :\n");
+    scanf("%d",&reg);
     printf("Binary of %d is :\n",reg);
     int_to_binary(reg);
     printf("\n");
