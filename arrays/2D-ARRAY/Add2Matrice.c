@@ -11,12 +11,6 @@ int main(){
             res[i][j]=stu1[i][j]+stu2[i][j];
         }
     }
-    // for(int i=0;i<row;i++){
-    //     for(int j=0;j<col;j++){
-    //         stu1[i][j]=rand()%9;
-    //         stu2[i][j]=rand()%9;
-    //     }
-    // }
     printf("Array-1 is :\n");
     for(int i=0;i<row;i++){
         for(int j=0;j<col;j++){
