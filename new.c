@@ -181,7 +181,7 @@
 //  printf("%d", ptr[ 1 ] ); 
 
 //  }
-#include<stdio.h> 
+// #include<stdio.h> 
 // int main() { 
 //   int a=5;
 //   int *p; 
@@ -235,7 +235,7 @@
 // str++;
 // printf("%c",*str);
 // }
-#include<stdio.h>
+// #include<stdio.h>
 // int main()
 // {
 // int arr[ ]={1.2, 2.4, 3.6, 4.8, 5.9};
@@ -260,7 +260,7 @@
 //   printf("%d ",*ptr); 
 //   return 0; 
 // }
-#include<stdio.h>
+// #include<stdio.h>
 // int main()
 // {
 //   int x=10,y=15,z=320;
@@ -435,11 +435,11 @@
 //     return 0;
 // }
 
-#include<stdio.h>
-void main(){
-char arr[11]="The African Queen";
-printf("%s",arr);
-}
+// #include<stdio.h>
+// void main(){
+// char arr[11]="The African Queen";
+// printf("%s",arr);
+// }
 
 // #include<stdio.h>
 // int main()

@@ -18,7 +18,6 @@ int toggleFifthBit(int n) {
 int main() {
     int n;
     scanf("%d", &n);
-    // toggleFifthBit(n);
     printf("\n%d", toggleFifthBit(n));
     return 0;
 }
