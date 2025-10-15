@@ -20,16 +20,14 @@ int main(){
     fgets(str,sizeof(str),stdin);
     
     //For removing '\n' before the '\0' character
-    if(str[strlen(str)-1] == '\n'){
-        str[strlen(str)-1] = '\0';
-    }
+    if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
+    
     ptr=str;
     for(int i=0;(*ptr)!='\0';i++){
         if(!(is_vowel(*ptr))){
             count++;
             if(count%2==0){
                 memmove(ptr,ptr+1,strlen(ptr+1)+1);
-                // continue;
                 ptr--;
             } 
         }
