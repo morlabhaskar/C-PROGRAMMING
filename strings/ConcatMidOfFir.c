@@ -9,12 +9,8 @@ int main(){
     printf("Enter a String2 :\n");
     fgets(str2,sizeof(str2),stdin);
 
-    if(str1[strlen(str1)-1] == '\n'){
-        str1[strlen(str1)-1] = '\0';
-    }
-    if(str2[strlen(str2)-1] == '\n'){
-        str2[strlen(str2)-1] = '\0';
-    }
+    if(str1[strlen(str1)-1] == '\n') str1[strlen(str1)-1] = '\0';
+    if(str2[strlen(str2)-1] == '\n') str2[strlen(str2)-1] = '\0';
 
     printf("Output is : \n");
     int mid = strlen(str1)/2;

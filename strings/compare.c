@@ -20,12 +20,6 @@ void main(){
             break;
         }
     }
-
-    if(flag == 0)
-        printf("Same");
-    
-    else
-        printf("Not Same");
-    
-
+    if(flag == 0) printf("Same");
+    else printf("Not Same");
 }

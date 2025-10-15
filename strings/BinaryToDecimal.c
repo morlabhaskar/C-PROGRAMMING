@@ -26,7 +26,5 @@ int main(){
         int dec = convert_binary_to_decimal(num);
         printf("Binary of %d is Equal to %d",num,dec);
     }
-    else{
-        printf("invalid input");
-    }
+    else printf("invalid input");
 }

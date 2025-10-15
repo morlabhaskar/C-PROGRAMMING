@@ -68,6 +68,7 @@ int is_lower(char ch){
 int main(){
     char str[100];
     int flag=1;
+    INPUT:
     fgets(str,sizeof(str),stdin);
     if(str[strlen(str)-1]=='\n'){
         str[strlen(str)-1]='\0';
@@ -83,7 +84,8 @@ int main(){
         }
     }
     if(flag){
-        printf("ERROR");
+        printf("Invalid Input\n");
+        goto INPUT;
     }
     else{
         printf("%s",str);

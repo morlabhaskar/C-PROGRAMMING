@@ -36,12 +36,10 @@ int main(){
     fgets(str,sizeof(str),stdin);
     printf("Enter SubString :\n");
     fgets(sub,sizeof(sub),stdin);
-    if(str[strlen(str)-1] == '\n'){
-        str[strlen(str)-1] = '\0';
-    }
-    if(sub[strlen(sub)-1] == '\n'){
-        sub[strlen(sub)-1] = '\0';
-    }
+    
+    if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
+    if(sub[strlen(sub)-1] == '\n') sub[strlen(sub)-1] = '\0';
+
     ptr=str;
     while((ptr=my_strstr(ptr,sub))!=NULL){
         flag=1;

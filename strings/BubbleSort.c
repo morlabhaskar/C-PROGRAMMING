@@ -6,9 +6,7 @@ int main(){
     fgets(str,sizeof(str),stdin);
 
     //For removing '\n' before the '\0' character
-    if(str[strlen(str)-1] == '\n'){
-        str[strlen(str)-1] = '\0';
-    }
+    if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
 
     for(int i=strlen(str)-1;i>=1;i--){//bcda
         for(int j=0;j<i;j++){
