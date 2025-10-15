@@ -8,6 +8,7 @@ int main() {
     // scanf("%s",&name);
     gets(name);
     // printf("%s",name);
+    //while(getchar()!='\n');//buffer clearence best way
 
     puts(name);
     // count = strlen(name);
