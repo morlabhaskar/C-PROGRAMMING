@@ -1,12 +1,12 @@
 #include<stdio.h>
 int main(){
-    int x,y,flag,res;
+    int y,flag,res;
     flag = 0;
-    printf("Enter X and Y values :");
-    scanf("%d %d",&x,&y);
+    printf("Enter Y values :");
+    scanf("%d",&y);
     res = 1;
     for(int i=0;i<=y;i++){
-        res *= x;
+        res *= 2;
         if(res == y){
             flag = 1;
             break;
