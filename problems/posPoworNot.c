@@ -12,5 +12,6 @@ int main(){
             break;
         }
     }
-    (flag) ? printf("YES") : printf("NO");
+    if(y<0) printf("wrong input");
+    else (flag) ? printf("YES") : printf("NO");
 }
