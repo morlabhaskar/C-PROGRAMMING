@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<time.h>
 void input_array(int arr[]){
-    srand(time(0));
+    srand(time(0));//srand(getpid())
     for(int i=0;i<10;i++){
         arr[i] = rand()%100;
     }

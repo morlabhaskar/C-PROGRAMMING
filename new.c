@@ -441,11 +441,117 @@
 // printf("%s",arr);
 // }
 
+// #include<stdio.h>
+// int main()
+// {
+//     char p[] = "%d\n";
+//     p[1] = 'c';
+//     printf(p, 65);
+//     return 0;
+// }
+
+// int is_prime(int num){
+//     int cnt=0;
+//     for(int i=1;i<num;i++){
+//         if(num%i==0){
+//             cnt++;
+//         }
+//     }
+//     if(cnt>2){
+//         return 0;
+//     }
+//     return 1;
+//  }
+// int main(){
+//     int min,max;
+//     printf("Enter a Min :\n");
+//     scanf("%d",&min);
+//     printf("Enter a Max :\n");
+//     scanf("%d",&max);
+//     for(int i=min;i<=max;i++){
+//         if(is_prime(i)){
+//             printf("%d,",i);
+//         }
+//     }
+// }
+// #include<stdio.h>
+// #include<string.h>
+// int is_vowel(char ch){
+//     if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'){
+//         return 1;
+//     }
+//     return 0;
+// }
+// int main(){
+//     char str[50];
+//     printf("Enter a String :\n");
+//     // gets(str);
+//     fgets(str,sizeof(str),stdin);
+//     if(str[strlen(str)-1]=='\n'){
+//         str[strlen(str)-1]='\0';
+//     }
+//     printf("Vowels are :\n");
+//     for(int i=0;str[i];i++){
+//         if(is_vowel(str[i])){
+//             printf("%c ",str[i]);
+//         }
+//     }
+    
+    // printf("%s\n",str);
+    // printf("String length is : %d\n",strlen(str));
+    // printf("String size is : %d",sizeof(str));
+// }
+// #include<stdio.h>
+// #include<string.h>
+// int is_repeated(char *str,char ch){
+//     int cnt=0;//2
+//     for(int i=0;str[i];i++){ // n a n i
+//         if(ch==str[i]){
+//             cnt++;
+//         }
+//     }
+//     if(cnt>=2){
+//         return 1;
+//     }
+//     return 0;
+
+// }
+// int main(){
+//     char str[50];
+//     printf("Enter a String :\n");
+//     fgets(str,sizeof(str),stdin); // n a n i \0 \0
+//     if(str[strlen(str)-1]=='\n'){
+//         str[strlen(str)-1]='\0';
+//     }
+//     for(int i=0;str[i];i++){ //n a n i
+//         if(is_repeated(str,str[i])){
+//             printf("%c ",str[i]);
+//         }
+//     }
+// }
+//           (8    4    2    1)     ( 8    4   2    1 )
+//            1              1             1
+
+//                   9                     4
 #include<stdio.h>
-int main()
-{
-    char p[] = "%d\n";
-    p[1] = 'c';
-    printf(p, 65);
-    return 0;
+int main(){
+    int num=12;
+    for(int bit=31;bit>=0;bit--){
+        printf("%d ",(num>>bit)&1);
+    }
 }
+//    0 1 1 0 0 
+//    0 1 1 0 0     
+//                1                   1
+//               0 1
+//                                           
+
+
+
+
+
+
+
+
+
+
