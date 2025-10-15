@@ -19,7 +19,6 @@ int my_atoi(char *str){
         i++;
     }
     return decimal*sign;
-
 }
 int main(){
     char s1[20]="123";
