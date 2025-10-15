@@ -37,4 +37,5 @@ int main(){
 
     printf("\nArrays After Sorting are :\n");
     print_array(arr,row);
+    
 }
