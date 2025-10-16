@@ -17,10 +17,6 @@ int checkPrime(int data){
             cnt++;
         }
     }
-    if(cnt==2){
-        return 1;
-    }
-    else{
-        return 0;
-    }
+    if(cnt==2) return 1;
+    else return 0;
 }

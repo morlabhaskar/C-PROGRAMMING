@@ -20,8 +20,10 @@ int main(){
     int count = 2,res=0;
     printf("Enter a String :\n");
     fgets(str, sizeof(str), stdin);
+    
     // For removing '\n' before the '\0' character
     if (str[strlen(str) - 1] == '\n') str[strlen(str) - 1] = '\0';
+
     while(count<strlen(str)+1){
         for(int i=0;i<=strlen(str)-count;i++){
             int cnt=0;

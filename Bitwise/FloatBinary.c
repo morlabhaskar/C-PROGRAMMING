@@ -1,7 +1,7 @@
 #include<stdio.h>
 void print_binary_using_int(float *num){
     int *ptr=(int*)num; //Treat Float as Int
-    for(int bit=31;bit>=1;bit--){
+    for(int bit=31;bit>=0;bit--){
         printf("%d",(*ptr>>bit)&1);
     }
 }

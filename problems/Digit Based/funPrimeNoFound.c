@@ -15,11 +15,8 @@ int main(){
             }
         }
     }
-    if(cnt==0){
-        printf("No Prime Numbers Between the given Range Digit Found of %d",dig);
-    }
+    if(cnt==0) printf("No Prime Numbers Between the given Range Digit Found of %d",dig);
 }
-
 int checkPrime(int data){
     int cnt=0;
     for(int j=1;j<=data;j++){
@@ -27,14 +24,9 @@ int checkPrime(int data){
             cnt++;
         }
     }
-    if(cnt==2){
-        return 1;
-    }
-    else{
-        return 0;
-    }
+    if(cnt==2) return 1;
+    else return 0;
 }
-
 int DigitFound(int data,int dig){
     int flag = 0;
     while(data){
@@ -44,10 +36,6 @@ int DigitFound(int data,int dig){
         }
         data /= 10;
     }
-    if(flag){
-        return 1;
-    }
-    else{
-        return 0;
-    }
+    if(flag) return 1;
+    else return 0;
 }

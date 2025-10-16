@@ -3,15 +3,14 @@
 
 int fib(int);
 int main(){
-    int nterms;
-    printf("Enter Number of Terms :");
-    scanf("%d",&nterms);
-    for(int i=0;i<nterms;i++){
-        printf("%d\t",fib(i));
-        fflush(stdout);
-        usleep(500000);
+    int min,max;
+    printf("Enter Min Number :\n");
+    scanf("%d",&min);
+    printf("Enter Max Number :\n");
+    scanf("%d",&max);
+    for(int i=min;i<=max;i++){
+        printf("%d ",fib(i));
     }
-    printf("\n");
 }
 int fib(int n){
     if(n==0 || n==1){
@@ -44,3 +43,20 @@ int fib(int n){
 // = 3 + 2 = 5
 
 // ans : 1 1 2 3 5
+
+
+
+// fib(4)
+// ├── fib(3)
+// │   ├── fib(2)
+// │   │   ├── fib(1) = 1
+// │   │   └── fib(0) = 1
+// │   │       → fib(2) = 2
+// │   └── fib(1) = 1
+// │       → fib(3) = 3
+// └── fib(2)
+//     ├── fib(1) = 1
+//     └── fib(0) = 1
+//         → fib(2) = 2
+
+// → fib(4) = 3 + 2 = 5     

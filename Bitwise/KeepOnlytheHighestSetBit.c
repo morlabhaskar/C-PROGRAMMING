@@ -10,7 +10,7 @@ int highest_set_bit(int reg) {
     int data=reg;
     int high = 0;
     for(int bit=31;bit>=0;bit--){
-        if((data>>bit)&1 == 1){
+        if((data>>bit)&1){
             high = bit;
             break;
         }
