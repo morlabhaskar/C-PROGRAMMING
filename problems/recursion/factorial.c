@@ -1,5 +1,8 @@
 #include<stdio.h>
-int fact(int);
+int fact(int n){
+    if(n==0) return 1;
+    return n*fact(n-1);
+}
 
 int main(){
     int num;
@@ -7,15 +10,6 @@ int main(){
     scanf("%d",&num);
     printf("Factorial of %d is %d",num,fact(num));
 }
-int fact(int n){
-    if(n==0){
-        return 1;
-    }
-    else{
-        return n*fact(n-1);
-    }
-}
-
 //output :
 
 // fact(5)
@@ -25,3 +19,4 @@ int fact(int n){
 // → 5 * (4 * (3 * (2 * fact(1))))
 // → 5 * (4 * (3 * (2 * (1 * fact(0)))))
 // → 5 * 4 * 3 * 2 * 1 * 1 = 120
+
