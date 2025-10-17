@@ -47,6 +47,19 @@ void print(char **ptr){
     }
 }
 
+void sort(char **ptr){
+    char temp[20];
+    for(int i=count-1;i>=0;i--){
+        for(int j=0;j<i;j++){
+            if(strcmp(ptr[j],ptr[j+1])>0){
+                int temp=ptr[j];
+                ptr[j]=ptr[j+1];
+                ptr[j+1]=temp;
+            }
+        }
+    }
+}
+
 int main(){
     char **names=NULL;
     char choice;
@@ -58,7 +71,7 @@ int main(){
             case 'i':names=input(names);break;
             case 'p':print(names);break;
             // case 'd':names=delete(names);break;
-            // case 's':sort(names);break;
+            case 's':sort(names);break;
             case 'q':
                     for(int i=0;i<count;i++) free(names[i]);
                     free(names);

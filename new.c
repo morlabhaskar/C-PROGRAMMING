@@ -533,19 +533,41 @@
 //            1              1             1
 
 //                   9                     4
-#include<stdio.h>
-int main(){
-    int num=12;
-    for(int bit=31;bit>=0;bit--){
-        printf("%d ",(num>>bit)&1);
-    }
-}
+// #include<stdio.h>
+// int main(){
+//     int num=16;
+    // printf("Enter a Number :\n");
+    // scanf("%d",&num);
+    // if(num%2==1){
+        // for(int bit=31;bit>=0;bit--){
+        //     printf("%d ",(num>>bit)&1);
+        // }
+    // }
+    // else{
+    //     printf("Error");
+    // }
+// }
 //    0 1 1 0 0 
 //    0 1 1 0 0     
 //                1                   1
 //               0 1
 //                                           
+//status of a bit  →   (num>>bit) &1
+//set bit          →   num |= (1<<bit)
+//clear bit        →   num &= ~(1<<bit)
+//toggle bit       →   num ^= (1<<bit)
 
+#include<stdio.h>
+int main(){
+    int a=10;
+    int b=20;
+    int c=30;
+    {
+        int c=b-a;
+        printf("%d\n",c);
+    }
+    printf("%d",c);
+}
 
 
 
