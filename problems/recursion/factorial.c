@@ -10,6 +10,7 @@ int main(){
     scanf("%d",&num);
     printf("Factorial of %d is %d",num,fact(num));
 }
+
 //output :
 
 // fact(5)

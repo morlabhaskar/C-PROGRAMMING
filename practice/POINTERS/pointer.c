@@ -52,15 +52,101 @@
 //     printf("i=%d f=%f\n",i,f); //51  24.5
 // } 
 
+// int main() {
+//     int i1=520,i2=0;
+//     float f1=23.4,f2=0.0;
+//     char *ptr;
+//     ptr=&i1;
+//     i2=*ptr;//i2=*(int*)ptr;
+//     ptr=&f1;
+//     f2=*ptr;//f2=*(float*)ptr;
+//     printf("i2=%d f2=%f\n",i2,f2); //8 51.00000
+// }
+
+// int main()
+// {
+//     void *ptr;
+//     short int i1 = 520, i2 = 0;
+//     float f1 = 23.4, f2 = 1.0;
+//     ptr = &i1;
+//     i2 = *(short int*)ptr;
+//     ptr = &f1;
+//     f2 = *(float*)ptr;
+//     printf("i2=%hd f2=%f\n", i2, f2);//520  23.4
+// }
+
+// int main() { 
+//     int var=0x12345678; 
+//     char *ptr=&var;
+//     printf("%x\n",*ptr);//78
+//     ptr++;
+//     printf("%x\n",*ptr);//56
+//     printf("%x\n",*(short int*)ptr);//3456
+// }
+
+// int main(){
+//     char ch=50;
+//     char *ptr=&ch;
+//     printf("%c\n",--*ptr);//1
+//     printf("%c\n",ch);//1
+// }
+
+// void fun( int *p, int q){
+//     printf("in fun...%d %d\n",++*p,++q);//11   21
+// }
+// int main() {
+//     int x=10,y=20;
+//     fun(&x,y);
+//     printf("in main...%d %d\n",x,y);// 11   20
+// }
+
+// int *check(int i, int j){
+// int *p, *q;
+// p = &i;
+// q = &j;
+// if(i>=45) return p;
+// else return q;
+// }
+// int main(){
+// int *c;
+// c = check(10, 20);
+// printf("%d",*c);
+// return 0;
+// }
+
+// int main(){
+//     unsigned int var=0x11223344;
+//     char *ptr=&var;
+//     printf("%x\n",*ptr++);//44
+//     printf("%x\n",++*ptr);//34
+//     printf("%x\n",*++ptr);//22
+//     printf("%x\n",--*ptr);//21
+//     printf("%x\n",*ptr--);//21
+//     printf("%x\n",var);//112113444
+// }
+
+// void fun1(int var){
+//     printf("%x\n",var);
+// }
+// void fun2(int *ptr){
+//     printf("%x\n",*ptr);
+// }
+// int main(){
+//     float f=23.4;               
+//     fun1(f);
+//     fun2(&f);
+// }
+
 int main() {
-    int i1=520,i2=0;
-    float f1=23.4,f2=0.0;
-    char *ptr;
-    ptr=&i1;
-    i2=*ptr;//i2=*(int*)ptr;
-    ptr=&f1;
-    f2=*ptr;//f2=*(float*)ptr;
-    printf("i2=%d f2=%f\n",i2,f2); //
+    unsigned int x = 0x12345678;
+    unsigned char *ptr = &x;
+
+    if (*ptr == 0x78)
+        printf("CPU is Little Endian\n");
+    else
+        printf("CPU is Big Endian\n");
+
+    return 0;
 }
 
 
