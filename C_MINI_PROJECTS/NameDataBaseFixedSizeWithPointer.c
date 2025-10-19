@@ -1,6 +1,7 @@
-//Name Data Base with Fixed Rows and Columns
+//Name Data Base with Fixed Columns and Dynamic Rows
 #include<stdio.h>
 #include<string.h>
+#include<stdlib.h>
 int count = 0,MAX=5;
 void printMenu() {
     printf("\n");
@@ -10,22 +11,22 @@ void printMenu() {
     printf(" i : Input Record\n");
     printf(" p : Print All Records\n");
     printf(" f : Find a Record\n");
+    printf(" s : Sort Records\n");
+    printf(" d : Delete a Record\n");
     printf(" q : Quit\n");
     printf("=========================================\n");
     printf("Enter your choice:\n");
 }
-void input(char (*ptr)[20]){
-    if(count>=MAX){
-        printf("Array is Full !\n");
-        return;
-    }
+void *input(char (*ptr)[20]){
     printf("Enter a Name :\n");
+    ptr = realloc(ptr,(count+1)*sizeof(*ptr));
     fgets(ptr[count],sizeof(ptr[count]),stdin);
     if(ptr[count][strlen(ptr[count])-1]=='\n') ptr[count][strlen(ptr[count])-1]='\0';
     count++;
+    return ptr;
 }
 void print(char (*ptr)[20]){
-    if(count==0) printf("Data Base is Empty !");
+    if(count==0) printf("Data Base is Empty !\n");
     else{
         printf("\n=== Stored Data ===\n");
         for(int i=0;i<count;i++){
@@ -54,18 +55,59 @@ void find(char (*ptr)[20]){
         if(flag) printf("Name is Not Found !\n");
     } 
 }
+void sort(char (*ptr)[20]){
+    if(count==0){
+        printf("Data Base is Empty!\n");
+    }
+    else{
+        int i,j;
+        char temp[20];
+        for(i=count-1;i>=1;i--){
+            for(j=0;j<i;j++){
+                if(strcmp(ptr[j],ptr[j+1])>0){
+                    strcpy(temp,ptr[j]);
+                    strcpy(ptr[j],ptr[j+1]);
+                    strcpy(ptr[j+1],temp);
+                }
+            }
+        }
+        printf("Data Base is Sorted\n");
+    }
+}
+void *delete(char (*ptr)[20]){
+    int i;
+    if(count==0){
+        printf("Data base is Empty!\n");
+        return NULL;
+    }
+    INPUT:
+    printf("Enter Index to Delete Record :\n");
+    scanf("%d",&i);
+    if(i>=count){
+        printf("You Entered Index is Outoff Range! Please Enter <%d \n",count);
+        goto INPUT;
+    }
+    memmove(ptr+i,ptr+i+1,(count-i-1)*sizeof(*ptr));
+    realloc(ptr,--count*sizeof(*ptr));
+    if(count==0) ptr=NULL;
+    printf("Deleted Successfully\n");
+    return ptr;
+}
 int main(){
-    char names[5][20];
+    char (*names)[20]=NULL; //Only Columns are Fixed Rows are Dynamic
     char choice;
     while(1){
         printMenu();
         scanf(" %c",&choice);
         getchar();
         switch(choice){
-            case 'i':input(names);break;
+            case 'i':names=input(names);break;
             case 'p':print(names);break;
+            case 's':sort(names);break;
+            case 'd':names=delete(names);break;
             case 'f':find(names);break;
-            case 'q':return 0;
+            case 'q':free(names);
+                     return 0;
             default:printf("ERROR : Invalid Entry !\n");
         }
     }

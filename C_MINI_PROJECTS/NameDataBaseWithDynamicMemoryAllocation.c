@@ -1,3 +1,4 @@
+//Name Data Base with Dynamic Rows and Columns
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
