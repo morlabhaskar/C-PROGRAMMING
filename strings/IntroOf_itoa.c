@@ -9,10 +9,57 @@
 #include<stdlib.h>
 
 int main(){
-    int num;
-    char str[30];
-    printf("Enter a Number :\n");
-    scanf("%d",&num);
-    itoa(num,str,10);//10 for decimal
-    printf("String is : %s",str);
+    char str[30]="123";// '1'  '2'  '3'  '\0'
+    for(int i=0;str[i];i++){
+        printf("%c",str[i]+48); //a  b  c
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// int main(){
+//     int num;
+//     char str[30];
+//     printf("Enter a Number :\n");
+//     scanf("%d",&num);
+//     itoa(num,str,10);//10 for decimal
+//     printf("String is : %s",str);
+// }

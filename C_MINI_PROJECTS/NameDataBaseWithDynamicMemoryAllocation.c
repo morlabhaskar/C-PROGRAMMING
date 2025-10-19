@@ -8,13 +8,12 @@ void printMenu() {
     printf("=========================================\n");
     printf("               MAIN MENU               \n");
     printf("=========================================\n");
-    printf(" i : Input Record\n");
-    printf(" p : Print All Records\n");
-    printf(" f : Find a Record\n");
-    printf(" s : Sort Records\n");
-    printf(" d : Delete a Record\n");
-    printf(" S : Save Records\n");
-    printf(" q : Quit\n");
+    printf("        i : Input Record\n");
+    printf("        p : Print All Records\n");
+    printf("        f : Find a Record\n");
+    printf("        s : Sort Records\n");
+    printf("        d : Delete a Record\n");
+    printf("        q : Quit\n");
     printf("=========================================\n");
     printf("Enter your choice:\n");
 }
@@ -32,33 +31,82 @@ char *getString(){
 
 void *input(char **ptr){
     ptr=realloc(ptr,(count+1)*sizeof(*ptr));
-    printf("Enter Data :\n");
+    printf("Enter Name :\n");
     ptr[count++]=getString();
     return ptr;
 }
 
 void print(char **ptr){
-    if(count == 0) printf("\n=== Data is Empty! ===\n");
+    if(count == 0) printf("\033[1;33m=== Data is Empty! ===\033[0m\n");
     else {
-        printf("\n=== Stored Data ===\n");
-        for(int i = 0; i < count; i++){
-            printf(" [%d] -> %s\n", i, ptr[i]);
+        printf("\033[1;32m");
+        printf("\n======== Stored Data ========\n");
+        for (int i = 0; i < count; i++) {
+            printf("     names[%d] -> %s\n", i, ptr[i]);
         }
-        printf("===================\n");
+        printf(" ==============================\n");
+        printf("\033[0m");
     }
 }
 
 void sort(char **ptr){
-    char temp[20];
+    if(count<2){
+        printf("\033[1;33m=== The Data is Too Short! ===\033[0m\n");
+        return;
+    }
+    char *temp;
     for(int i=count-1;i>=0;i--){
         for(int j=0;j<i;j++){
             if(strcmp(ptr[j],ptr[j+1])>0){
-                int temp=ptr[j];
+                temp=ptr[j];
                 ptr[j]=ptr[j+1];
                 ptr[j+1]=temp;
             }
         }
     }
+    if(count>=2) printf("\033[1;32m=== Sorted Successfully ===\033[0m\n");
+}
+void find(char **ptr){
+    if(count==0){
+        printf("\033[1;33m=== Data Base is Empty! ===\033[0m\n");
+        return;
+    }
+    int flag=1;
+    char fname[30];  
+    printf("Enter a Name :\n");
+    fgets(fname,sizeof(fname),stdin);
+    if(fname[strlen(fname)-1]=='\n') fname[strlen(fname)-1]='\0';   
+    for(int i=0;i<count;i++){
+        if(strcmp(fname,ptr[i])==0){
+            flag=0;
+            printf("\033[1;32m%s is Found at Index %d\033[0m\n",ptr[i],i);
+        }
+    }       
+    if(flag){
+        printf("\033[1;33m=== Name is Not Found ! ===\033[0m\n");
+    }         
+    
+}
+
+void *delete(char **ptr){
+    int i;
+    if(count==0){
+        printf("\033[1;33m=== Data Base is Empty! ===\033[0m\n");
+        return NULL;
+    }
+    INPUT:
+    printf("Enter a Index to Delete Record :\n");
+    scanf("%d",&i);
+    if(i>=count){
+        printf("\033[1;33m=== You Entered Outoff Range, Please Enter <%d ===\033[0m\n",count);
+        goto INPUT;
+    }
+    free(ptr[i]);
+    memmove(ptr+i,ptr+i+1,(count-i-1)*sizeof(*ptr));
+    ptr = realloc(ptr,--count*sizeof(*ptr));
+    if(count==0) ptr=NULL;
+    printf("\033[1;31m=== Record Deleted Successfully ===\033[0m\n");
+    return ptr;
 }
 
 int main(){
@@ -71,13 +119,14 @@ int main(){
         switch(choice){
             case 'i':names=input(names);break;
             case 'p':print(names);break;
-            // case 'd':names=delete(names);break;
+            case 'd':names=delete(names);break;
             case 's':sort(names);break;
+            case 'f':find(names);break;
             case 'q':
                     for(int i=0;i<count;i++) free(names[i]);
                     free(names);
                     return 0;
-            default : printf("ERROR : Invalid Entry !\n");
+            default : printf("\033[1;33m=== ERROR : Invalid Entry ! ===\033[0m\n");
         }
     }
 }
