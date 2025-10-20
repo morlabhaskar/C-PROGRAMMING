@@ -39,7 +39,7 @@ void *input(char **ptr){
 void print(char **ptr){
     if(count == 0) printf("\033[1;33m=== Data is Empty! ===\033[0m\n");
     else {
-        printf("\033[1;32m");
+        printf("\033[1;34m");
         printf("\n======== Stored Data ========\n");
         for (int i = 0; i < count; i++) {
             printf("     names[%d] -> %s\n", i, ptr[i]);
@@ -128,6 +128,7 @@ int main(){
             case 'q':
                     for(int i=0;i<count;i++) free(names[i]);
                     free(names);
+                    printf("\033[1;32mExiting Program... Goodbye!\033[0m\n");
                     return 0;
             default : printf("\033[1;33m=== ERROR : Invalid Entry ! ===\033[0m\n");
         }
