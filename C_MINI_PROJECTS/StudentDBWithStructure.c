@@ -48,22 +48,6 @@ struct Student *input(struct Student *students){
     return students;
 
 }
-// void print(struct Student *students){
-//     if(count==0){
-//         printf("\033[1;33m=== No Records Found! ===\033[0m\n");
-//         return;
-//     }
-//     printf("\033[1;34m\n========= STUDENT RECORDS =========\n");
-//     for(int i=0;i<count;i++){
-//         printf("Record [%d]\n",i);
-//         printf("         Name    : %s\n",students[i].name);
-//         printf("         Roll No : %s\n",students[i].roll);
-//         printf("         Branch  : %s\n",students[i].branch);
-//         printf("         Phone   : %s\n",students[i].phone);
-//         if(count>i+1) printf("-----------------------------------\n");
-//     }
-//     printf("===================================\033[0m\n");
-// }
 void print(struct Student *students){
     if(count==0){
         printf("\033[1;33m=== No Records Found! ===\033[0m\n");
