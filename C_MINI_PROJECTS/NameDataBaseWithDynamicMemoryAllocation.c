@@ -104,8 +104,11 @@ void *delete(char **ptr){
     free(ptr[i]);
     memmove(ptr+i,ptr+i+1,(count-i-1)*sizeof(*ptr));
     ptr = realloc(ptr,--count*sizeof(*ptr));
-    if(count==0) ptr=NULL;
-    printf("\033[1;31m=== Record Deleted Successfully ===\033[0m\n");
+    if(count==0){
+        printf("\033[1;31m=== All Records are Deleted ===\033[0m\n");
+        ptr=NULL;
+    }
+    else printf("\033[1;31m=== Record Deleted Successfully ===\033[0m\n");
     return ptr;
 }
 
