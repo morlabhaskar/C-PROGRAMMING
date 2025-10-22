@@ -9,17 +9,16 @@ struct Student{
     char *phone;
 };
 void printMenu() {
-    printf("\n");
-    printf("=========================================\n");
-    printf("           STUDENT DATA BASE MENU        \n");
-    printf("=========================================\n");
-    printf("   i : Input Record\n");
-    printf("   p : Print All Records\n");
-    printf("   f : Find Record by Roll No\n");
-    printf("   s : Sort Records by Name\n");
-    printf("   d : Delete Record by Roll No\n");
-    printf("   q : Quit\n");
-    printf("=========================================\n");
+    printf("\n|===========================================|\n");
+    printf("|           STUDENT DATA BASE MENU          |\n");
+    printf("|===========================================|\n");
+    printf("|       i : Input Record                    |\n");
+    printf("|       p : Print All Records               |\n");
+    printf("|       f : Find Record by Roll No          |\n");
+    printf("|       s : Sort Records by Name            |\n");
+    printf("|       d : Delete Record by Roll No        |\n");
+    printf("|       q : Quit                            |\n");
+    printf("|===========================================|\n");
     printf("Enter your choice: ");
 }
 char *getString(){

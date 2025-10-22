@@ -32,20 +32,19 @@ int main(){
     
 
     //For removing '\n' before the '\0' character
-    if(str[strlen(str)-1] == '\n'){
-        str[strlen(str)-1] = '\0';
-    }
-    if(sub[strlen(sub)-1] == '\n'){
-        sub[strlen(sub)-1] = '\0';
-    }
+    if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
+    if(sub[strlen(sub)-1] == '\n') sub[strlen(sub)-1] = '\0';
+
     ptr=str;
     // ptr = strstr(ptr,sub);
     printf("%s\n",str);
     // while((ptr = strstr(ptr,sub))!=NULL){
     while((ptr = my_strstr(ptr,sub))!=NULL){
         printf("SubString Found at Index : %d\n",ptr-str);
+        // memset(ptr,'*',strlen(sub));
         ptr = ptr + strlen(sub);
     }
+    // printf("%s\n",str);
     // if(ptr==NULL){
     //     printf("SubString Not Found");
     // }

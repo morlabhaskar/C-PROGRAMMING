@@ -1,5 +1,5 @@
 //Introduction of strchr() Pre-defined Function
-//char *strchr(const char *s, int c);
+//char *strchr(const char *s, char ch);
 
 //The strchr() function returns a pointer to the first occurrence of the character ch in the string str.
 
@@ -36,7 +36,6 @@ int main(){
     }
     else{
         printf("Character Found at Index : %d\n",ptr-str);
-        memset(ptr,'*',1);
     }
     printf("%s\n",str);
 }

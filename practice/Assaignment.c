@@ -1,6 +1,6 @@
-#include <stdio.h>
-int main()
-{
+// #include <stdio.h>
+// int main()
+// {
     // int p;
     // for(p=1; p<=10;--p , p =p+2 ){
     // printf( " Hello " );
@@ -58,12 +58,31 @@ int main()
     // ip++;
     // printf("% x % x\n", *cp, *ip);
 
-    int num = 515;
-    char *cptr = &num;
-    int *iptr = &num;
-    printf("%d\n", *cptr); // 3
-    printf("%d\n", *iptr); // 515
-    *cptr = 'a';
-    printf("%d\n", *cptr); //97
-    printf("%d\n", *iptr); //
+//     int num = 515;
+//     char *cptr = &num;
+//     int *iptr = &num;
+//     printf("%d\n", *cptr); // 3
+//     printf("%d\n", *iptr); // 515
+//     *cptr = 'a';
+//     printf("%d\n", *cptr); //97
+//     printf("%d\n", *iptr); //
+// }
+
+//Write a program to implement strcmp.
+#include<stdio.h>
+#include<string.h>
+int my_strcmp(const char *s1,const char *s2){
+    while(*s1 && (*s1==*s2)){
+        s1++;
+        s2++;
+    }
+    int x = *s1 - *s2;
+    if(x>0) return 1;
+    else if(x<0) return -1;
+    else return 0;
+}
+int main(){
+    char s1[30]="abc";
+    char s2[30]="xyz";
+    printf("%d\n",my_strcmp(s1,s2));
 }

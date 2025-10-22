@@ -1,5 +1,5 @@
 //Introduction of strchr() Pre-defined Function
-//char *strchr(const char *s, int c);
+//char *strchr(const char *s, char ch);
 
 //The strchr() function returns a pointer to the first occurrence of the character ch in the string str.
 
@@ -23,9 +23,8 @@ int main(){
     fgets(str,sizeof(str),stdin);
 
     //For removing '\n' before the '\0' character
-    if(str[strlen(str)-1] == '\n'){
-        str[strlen(str)-1] = '\0';
-    }
+    if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
+
     ch = getchar();
     ptr = str;
     // ptr = strchr(str,ch);
