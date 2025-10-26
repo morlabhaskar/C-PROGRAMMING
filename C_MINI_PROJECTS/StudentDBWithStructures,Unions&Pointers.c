@@ -34,7 +34,7 @@ void printMenu() {
     printf("|       f : Find Record by Name             |\n");
     printf("|       s : Sort Records by Name            |\n");
     printf("|       d : Delete Record by Name           |\n");
-    printf("|       d : Update Record by Name           |\n");
+    // printf("|       u : Update Record by Name           |\n");
     printf("|       q : Quit                            |\n");
     printf("|===========================================|\n");
     printf("Enter your choice: ");
@@ -79,7 +79,6 @@ V25HE2 *input(V25HE2 *student){
         printf("Enter Diploma Marks :\n");
         scanf("%f",&marks);
     }
-    
     if(flag==0){
         student[count].per.SSCPLUS.inter = marks;
         student[count].per.flag = 0;
@@ -103,11 +102,11 @@ void print(V25HE2 *student){
     }
     for(int i=0;i<count;i++){
         printf("Record-[%d]\n",i+1);
-        printf(" %d | %s | %s | %u-%u-%u | %2f | %s \n"
+        printf(" %d | %s | %s | %u-%u-%u | %0.2f | %s \n"
             ,i,student[i].id,student[i].name,student[i].dob.day,student[i].dob.month,student[i].dob.year,
             (student[i].per.flag==0) ? student[i].per.SSCPLUS.inter :student[i].per.SSCPLUS.diploma,student[i].phn);
         if(count>i+1){
-            printf("-----------------------------------------------------------------------------------\n");
+            printf("--------------------------------------------------------------\n");
         }
     }
 }
@@ -117,7 +116,7 @@ void sort(V25HE2 *student){
         return;
     }
     for(int i=count-1;i>=0;i--){
-        for(int j=0;j<i;i++){
+        for(int j=0;j<i;j++){
             if(strcmp(student[j].name,student[j+1].name)>0){
                 V25HE2 temp = student[j];
                 student[j] = student[j+1];
@@ -127,6 +126,137 @@ void sort(V25HE2 *student){
     }
     if(count>=2) printf("\033[1;32m=== Sorted Successfully ===\033[0m\n");
 }
+
+void find(V25HE2 *student){
+    if(count==0){
+        printf("\033[1;33m=== No Records to Search! ===\033[0m\n");
+        return;
+    }
+    char *fname;
+    int found = -1;
+    printf("Enter Name to Find Record :\n");
+    fname = getString();
+    for(int i=0;i<count;i++){
+        if(strcmp(fname,student[i].name)==0){
+            found = i;
+            break;
+        }
+    }
+    if(found==-1){
+        printf("Record Not Found !\n");
+    }
+    else{
+        printf("Record Found at Index of %d\n",found);
+        printf("Id      : %s\n",student[found].id);
+        printf("Name    : %s\n",student[found].name);
+        printf("DOB     : %u-%u-%u\n",student[found].dob.day,student[found].dob.month,student[found].dob.year);
+        (student[found].per.flag==0)?(printf("Inter   : %0.2f\n",student[found].per.SSCPLUS.inter)):(printf("Diploma : %0.2f\n",student[found].per.SSCPLUS.diploma));
+        printf("Phone   : %s\n",student[found].phn);
+    }
+}
+
+V25HE2 *delete(V25HE2 *student){
+    if(count==0){
+        printf("\033[1;33m=== No Records to Search! ===\033[0m\n");
+        return student;
+    }
+    char *dname;
+    int found = -1;
+    printf("Enter Name to Find Record :\n");
+    dname = getString();
+    for(int i=0;i<count;i++){
+        if(strcmp(dname,student[i].name)==0){
+            found = i;
+            break;
+        }
+    }
+    if(found==-1){
+        printf("Record Not Found !\n");
+        return student;
+    }
+    free(student[found].id);
+    free(student[found].name);
+    free(student[found].phn);
+    memmove(student+found,student+found+1,(count-found-1)*sizeof(V25HE2));
+    student = realloc(student,--count*sizeof(V25HE2));
+    if(count==0){
+        free(student);
+        student=NULL;
+        printf("\033[1;31m=== All Records Deleted! ===\033[0m\n"); 
+    }
+    else {
+        printf("\033[1;31m=== Record Deleted Successfully! ===\033[0m\n");
+    }
+    return student;
+}
+// char *status(char *name){
+//     char *temp=NULL,*res;
+//     printf("Are you Update the %s,If want type yes Other wise no :\n",name);
+//     temp = getString();
+//     if(strcmp(temp,"yes")==0){
+//         printf("Enter New %s :\n",name);
+//         res=getString();
+//     }
+//     return res;
+// }
+// unsigned int update_dob(char *ptr){
+//     char *temp=NULL;
+//     unsigned int res;
+//     printf("Are you Update the %s of your DOB (only numbers),If want type yes Other wise no :\n",ptr);
+//     temp = getString();
+//     if(strcmp(temp,"yes")==0){
+//         printf("Enter New %s in your DOB :\n",ptr);
+//         scanf("%u",&res);
+//     }
+//     else{
+//         res=0;
+//     }
+//     return res;
+// }
+// V25HE2 *update(V25HE2 *student){
+//     if(count == 0){
+//         printf("Data Base is Empty!\n");
+//         return student;
+//     }
+//     char *uname;
+//     int found=-1;
+//     printf("Enter Name to Update Record :\n");
+//     uname = getString();
+//     for(int i=0;i<count;i++){
+//         if(strcmp(uname,student[i].name)==0){
+//             found = i;
+//             break;
+//         }
+//     }
+//     if(found != -1){
+//         char *temp=NULL;
+//         temp=status("Id");
+//         student[found].id=temp;
+//         free(temp);
+//         temp=status("Name");
+//         student[found].name=temp;
+//         free(temp);
+
+//         //for DOB
+//         unsigned int dob;
+//         dob=update_dob("Day");
+//         student[found].dob.day=dob;
+//         dob=update_dob("Month");
+//         student[found].dob.month=dob;
+//         dob=update_dob("Year");
+//         student[found].dob.year=dob;
+
+//         // temp=status("Phone");
+//         // student[found].phn=temp;
+//         // free(temp);
+//         printf("\033[1;32m=== Record Updated Successfully! ===\033[0m\n");
+//     }
+//     else{
+//         printf("\033[1;33m=== Name Not Found! ===\033[0m\n");
+//         student=student;
+//     }
+//     return student;
+// }
 
 int main(){
     V25HE2 *students=NULL;
@@ -139,8 +269,8 @@ int main(){
             case 'i':students=input(students);break;
             case 'p':print(students);break;
             case 's':sort(students);break;
-            // case 'f':find(students);break;
-            // case 'd':students=delete(students);break;
+            case 'f':find(students);break;
+            case 'd':students=delete(students);break;
             // case 'u':students=update(students);break;
             case 'q':
                     for(int i=0;i<count;i++){

@@ -176,6 +176,7 @@ STUDENTS *update(STUDENTS *students){
         temp=status("Phone");
         students[found].phone=temp;
         free(temp);
+        printf("\033[1;32m=== Record Updated Successfully! ===\033[0m\n");
     }
     else{
         printf("\033[1;33m=== Name Not Found! ===\033[0m\n");
