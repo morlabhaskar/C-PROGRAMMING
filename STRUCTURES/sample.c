@@ -11,7 +11,7 @@
 //     return 0;
 // }
 
-#include<stdio.h>
+#include <stdio.h>
 //     struct course
 //     {
 //         int courseno;
@@ -19,8 +19,8 @@
 //     };
 // int main()
 // {
-//     struct course c[] = { {102, "C"}, 
-//                           {103, "ARM"}, 
+//     struct course c[] = { {102, "C"},
+//                           {103, "ARM"},
 //                           {104, "LINUX"}     };
 //     printf("%d ", c[1].courseno);
 //     printf("%s\n", (*(c+2)).coursename);
@@ -112,7 +112,7 @@
 //     double d;
 // };
 // int main()
-// {   
+// {
 //    struct Data var;
 //   printf("%lu\n",sizeof(var));
 // }
@@ -156,7 +156,7 @@
 //         printf("%lu\n",sizeof(D));
 // }
 
-#include<stdio.h>
+#include <stdio.h>
 
 // struct Padded
 
@@ -210,7 +210,7 @@
 //      printf("%lu",sizeof(struct Padded));
 // }
 
-#include<stdio.h>
+#include <stdio.h>
 // struct exp{
 //      char a;
 //      int b;
@@ -234,3 +234,98 @@
 //      struct Padded v;
 //      printf("%lu",sizeof(struct Padded));
 // }
+
+//  struct student{
+// int r;
+// float m;
+// };
+//  main(){
+// struct student v;
+// printf("%d\n",sizeof(v));//8
+// printf("%d\n",sizeof(struct student));//8
+//  }
+
+//  struct A{
+//  int x;
+//  int y;
+//  };
+//  main(){
+// struct A v={10,20};
+// struct A *p=&v; //p is structure pointer
+// printf("%d %d\n",p->x,p->y);//10 20
+// printf("%d %d\n",v.x,v.y);//10 20
+// }
+
+// struct A{
+//     int x;
+//     int y;
+//     int *p;
+// };
+// main(){
+//     struct A v = {10, 20};
+//     v.p = &v.x;
+//     *(v.p) = 100;
+//     v.p = &v.y;
+//     *(v.p) = 200;
+//     // printf("%d\n", sizeof(v));//4
+//     printf("%d %d %d\n", v.x,v.y,*(v.p));//100 200 200
+// }
+
+// struct A{
+//     int x = 10;
+//     int y = 20;
+// } v;
+// main(){
+//     printf("%d %d\n", v.x, v.y);//error
+// }
+
+// struct st{
+//     int a : 5;
+//     char b : 3;
+//     float c : 2;
+// };
+// main(){
+//     struct st v;
+//     printf("%d\n", sizeof(v));//error:float not valid in bit-fields
+// }
+
+// struct st{
+//     int a : 5;
+//     char b : 3;
+//     int c : 2;
+// };
+// main(){
+//     struct st v;
+//     printf("%d\n", sizeof(v));//Mixing char and int as base types for bit-fields is not allowed by the C standard.
+//     printf("%u\n", v.a);
+//     printf("%u\n", v.b);
+//     printf("%u\n", v.c);
+// }
+
+// struct st {
+//     int a : 5;
+//     int b : 3;
+//     int c : 2;
+// };
+// int main() {
+//     struct st v = {5, 4, 3};
+//     // printf("%d\n", sizeof(v));
+//     printf("%d\n", v.a);//5
+//     printf("%d\n", v.b);//-4
+//     printf("%d\n", v.c);//-1
+// }
+
+// struct st {
+//     unsigned int a : 5;
+//     unsigned int b : 3;
+//     unsigned int c : 2;
+// };
+// int main() {
+//     struct st v = {5, 4, 3};
+//     // printf("%d\n", sizeof(v));
+//     printf("%d\n", v.a);//5
+//     printf("%d\n", v.b);//4
+//     printf("%d\n", v.c);//3
+// }
+
+
