@@ -1,0 +1,72 @@
+→ fopen()
+
+FILE *fopen(const char *filename, const char *mode);
+
+* fopen function search for a given file in secondary memory, if found it loads the file from the secondary memory, and create a file control structure variable to it and returns the address of the file control structure variable.
+
+→ fclose()
+
+int fclose(FILE *stream);
+
+* Closes the file associated with stream. Returns 0 on success, EOF on error.
+
+→ fgetc()
+
+int fgetc(FILE *stream);
+
+* Reads the next character from the given file stream and returns it as an unsigned char cast to an int. Returns EOF on end-of-file or error.
+
+→ fputc()
+
+int fputc(int c, FILE *stream);
+
+* Writes the character c (converted to an unsigned char) to the file stream. Returns the written character, or EOF on error.
+
+→ fgets()
+
+char *fgets(char *str, int n, FILE *stream);
+
+* Reads a string from the file stream, stopping after n-1 characters or a newline, whichever comes first. The string is null-terminated. Returns str on success or NULL on error or EOF.
+
+→ fread()
+
+size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
+
+* Reads data from the file into an array pointed to by ptr. It reads up to nmemb items of size bytes each. Returns the number of items successfully read.
+
+→ fwrite()
+
+size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
+
+* Writes data from the array ptr to the file. Writes nmemb items of size bytes each. Returns the number of items successfully written.
+
+→ fscanf()
+
+int fscanf(FILE *stream, const char *format, ...);
+
+* Reads formatted input from a file (similar to scanf). Returns the number of input items successfully matched and assigned.
+
+→ fprintf()
+
+int fprintf(FILE *stream, const char *format, ...);
+
+* Writes formatted output to a file (similar to printf). Returns the number of characters printed, or a negative value on error.
+
+→ ftell()
+
+long ftell(FILE *stream);
+
+* Returns the current file position indicator (offset in bytes from the beginning of the file). Returns -1L on error.
+
+→ fseek()
+
+int fseek(FILE *stream, long offset, int whence);
+
+* Moves the file position indicator to a specific location: whence can be SEEK_SET (beginning), SEEK_CUR (current position), or SEEK_END (end). Returns 0 on success, nonzero on failure.
+
+→ frewind()
+
+void rewind(FILE *stream);
+
+* Sets the file position indicator to the beginning of the file (equivalent to fseek(stream, 0, SEEK_SET)) and clears any error/EOF flags.
+
