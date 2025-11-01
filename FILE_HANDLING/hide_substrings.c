@@ -1,10 +1,11 @@
+#include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
 //<./a.exe>  <filename>  <substring>
 int main(int argc,char *argv[]){
     if(argc != 3){
         printf("Invalid Command Line Arguments\n");
-        printf("<./a.out>  <substring>   <filename>\n");
+        printf("<./a.out>  <filename>   <substring>\n");
         exit(0);
     }
     char str[100],*ptr=NULL;
@@ -14,8 +15,10 @@ int main(int argc,char *argv[]){
         ptr = str;
         while((ptr=strstr(ptr,argv[2]))!=NULL){
             memset(ptr,'*',strlen(argv[2]));
-            // ptr = ptr+strlen(argv[2]);
+            fputs(ptr,fptr);
+            ptr = ptr+strlen(argv[2]);
         }
+        //fptr(ptr,fptr);
     }
     fclose(fptr);
 }
