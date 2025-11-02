@@ -15,29 +15,27 @@ void reverse_string(char *ptr){
         right--;
     }
 }
-
-int main(int argc, char *argv[])
-{
-	if(argc!=2)
-	{
-		printf("incorrect inputs\n");
-		exit(0);
-	}
+void updateReverseLine(char *filename){
 	FILE *fp;
 	char str[100];
-	fp=fopen(argv[1],"r+");
-	if(fp==NULL)
-	{
-		printf("%s is not found\n",argv[1]);
+	fp=fopen(filename,"r+");
+	if(fp==NULL){
+		printf("%s is not found\n",filename);
 		exit(0);
 	}
-	while(fgets(str,100,fp))
-	{
+	while(fgets(str,100,fp)){
 		reverse_string(str);
 		fseek(fp,-strlen(str),1); // moving from current line to previous line
 		fputs(str,fp);
 	}
 	fclose(fp);
+}
 
+int main(int argc, char *argv[]){
+	if(argc!=2){
+		printf("incorrect inputs\n");
+		exit(0);
+	}
+	updateReverseLine(argv[1]);
     printf("File updated with reversed lines successfully.\n");
 }

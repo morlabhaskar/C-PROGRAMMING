@@ -3,14 +3,14 @@
 int main(){
     char ch;
     FILE *fptr;
-    fptr = fopen("source.txt","r");
+    fptr = fopen("dest.txt","r");
     if(fptr==NULL){
         printf("No File Found\n");
         exit(0);
     }
     printf("File Opend Successfully\n");
-    while ((ch = fgetc(fptr)) != EOF) {
-        printf("%c", ch);
+    while ((ch = fgetc(fptr))!=EOF) {
+        printf("%c\n", ch);
     }
     fclose(fptr);
 }

@@ -1,3 +1,4 @@
+
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
@@ -15,10 +16,10 @@ int main(int argc,char *argv[]){
         ptr = str;
         while((ptr=strstr(ptr,argv[2]))!=NULL){
             memset(ptr,'*',strlen(argv[2]));
-            fputs(ptr,fptr);
             ptr = ptr+strlen(argv[2]);
         }
-        //fptr(ptr,fptr);
+        fseek(fptr,-strlen(argv[2]),SEEK_CUR);
+        fputs(str,fptr);
     }
     fclose(fptr);
 }

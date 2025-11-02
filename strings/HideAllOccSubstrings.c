@@ -15,7 +15,7 @@ int main(){
     if(sub[strlen(sub)-1] == '\n') sub[strlen(sub)-1] = '\0';
     
     ptr=str;
-    ptr = strstr(ptr,sub);
+    // ptr = strstr(ptr,sub);
     printf("%s\n",str);
     while((ptr = strstr(ptr,sub))!=NULL){
         memset(ptr,'*',strlen(sub));
