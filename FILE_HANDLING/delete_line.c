@@ -31,7 +31,7 @@ void *deleteLine(char (*p)[100],int line){
 void writeToFile(char (*p)[100],char *filename){
     FILE *fp=NULL;
     int i=0;
-    fp = fopen(filename,"w");
+    fp = fopen(filename,"w");//previous content is erased and ready for writing new content
     for(i=0;i<cnt;i++){
        fputs(p[i],fp); 
     }
