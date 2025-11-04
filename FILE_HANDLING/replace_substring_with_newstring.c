@@ -12,6 +12,7 @@ void *readFromFile(char *filename) {
         exit(0);
     }
     while (fgets(str, sizeof(str), fp)) {
+        
         p = realloc(p, (cnt + 1) * sizeof(*p));
         strcpy(p[cnt], str);
         cnt++;
