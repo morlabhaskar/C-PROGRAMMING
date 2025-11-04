@@ -2,26 +2,20 @@
 #include<stdlib.h>
 #include<string.h>
 //./a.out   filename
-void reverse_word(char *p){
-    char *left=p,*right=p+strlen(p)-1;
-    while(left<right){
-        if((*right)=='\n'){
-            right--;
+void sort_word(char *p){
+    for(int i=strlen(p)-1;i>=0;i--){
+        for(int j=0;j<i;j++){
+            if(p[j]>p[i]){
+                char temp=p[j];
+                p[j]=p[i];
+                p[i]=temp;
+            }
         }
-        if((*left)!=(*right)){
-            char temp = *left;
-            *left = *right;
-            *right = temp;
-        }
-        left++;
-        right--;
     }
 }
 void replace_null_with_space(char *ptr,int len){
     for(int i=0;i<len;i++){
-        if(ptr[i]=='\0'){
-            ptr[i]=' ';
-        }
+        if(ptr[i]=='\0') ptr[i]=' ';
     }
 }
 int main(int argc,char *argv[]){
@@ -41,7 +35,13 @@ int main(int argc,char *argv[]){
         int len=strlen(str);
         ptr=strtok(ptr," ");
         while(ptr != NULL){
-            reverse_word(ptr);
+            int flag=0;
+            if(ptr[strlen(ptr)-1]=='\n'){
+                flag=1;
+                ptr[strlen(ptr)-1]='~';
+            }
+            sort_word(ptr);
+            if(flag) ptr[strlen(ptr)-1]='\n';
             ptr=strtok(NULL," ");
         }
         replace_null_with_space(str,len);
@@ -54,6 +54,6 @@ int main(int argc,char *argv[]){
 morla bhaskar nani
 morla ravi kumar
 
-alrom raksahb inan
-alrom ivar ramuk
+almor aabhkrs ainn
+almor airv akmru
 */

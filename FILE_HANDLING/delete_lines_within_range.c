@@ -44,7 +44,6 @@ void writeToFile(char (*p)[100],char *filename){
 }
 int main(int argc,char *argv[]){
     char (*lines)[100]=NULL;
-    int linenum;
     if(argc!=4){
         printf("Incorrect Input!\n");
         printf("exe  filename  linenum\n");
