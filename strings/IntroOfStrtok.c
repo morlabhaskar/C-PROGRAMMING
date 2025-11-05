@@ -14,7 +14,18 @@ int main(){
     ptr = str;
     ptr = strtok(ptr," ");
     while(ptr != NULL){
-        puts(ptr);
+        // puts(ptr);
+        for(int i=0;i<strlen(ptr);i++){
+            printf("%c ",*(ptr+i));
+        }
+        printf("word_len : %d\n",strlen(ptr));
         ptr = strtok(NULL," ");
     }
 }
+/*
+Enter a String :
+nani abc dhc
+n a n i word_len : 4
+a b c word_len : 3
+d h c word_len : 3
+*/
