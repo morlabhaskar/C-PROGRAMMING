@@ -51,3 +51,8 @@ int main(){
         printf("Given String  \"%s\" is Not Palindrome",str);
     }
 }
+/*
+Enter a String :
+nanan
+Given String  "nanan" is Palindrome
+*/
