@@ -70,3 +70,64 @@ void rewind(FILE *stream);
 
 * Sets the file position indicator to the beginning of the file (equivalent to fseek(stream, 0, SEEK_SET)) and clears any error/EOF flags.
 
+
+
+🧾 Basic Level
+
+Write a program to create a file and write user input into it.
+Hint: Use fopen() with "w" mode and fprintf() or fputs().
+
+Write a program to read a file and display its contents on the screen.
+Hint: Use fopen() with "r" mode and fgetc() or fgets().
+
+Write a program to count the number of characters, words, and lines in a text file.
+
+Write a program to copy contents from one file to another.
+Hint: Use "r" for source and "w" for destination file.*
+
+Write a program to append content from one file to another.
+
+Write a program to check whether a file exists or not before opening it.
+Hint: Check fptr == NULL.
+
+🧩 Intermediate Level
+
+Write a program to convert all lowercase letters to uppercase in a file.
+
+Write a program to count the number of vowels and consonants in a file.
+
+Write a program to merge two files into a third file.
+
+Write a program to compare two files and display whether their contents are identical.
+
+Write a program to reverse the contents of a file (character by character).
+
+Write a program to read a file and print only unique words.
+
+Write a program to remove all blank lines from a file.
+
+Write a program to replace a specific word in a file with another word.
+
+Write a program to find the longest line in a file.
+
+⚙️ Advanced Level
+
+Write a program to read a file, sort all lines alphabetically, and rewrite it.
+
+Write a program to remove duplicate lines from a file.
+
+Write a program to encrypt and decrypt the contents of a file using a simple cipher.
+
+Write a program to split a large file into smaller files (e.g., 100 lines per file).
+
+Write a program to read student records (name, roll, marks) from a file and display the top 3 scorers.
+
+Write a program to read a binary file and print its hexadecimal equivalent.
+
+Write a program to copy a binary file (like an image or .exe) byte by byte.
+
+Write a program to log all operations (read/write/append) performed on a file into another log file.
+
+Write a program to find and delete a specific line (by number or content) from a text file.
+
+Write a program to hide all occurrences of a substring in a file (replace with *).
