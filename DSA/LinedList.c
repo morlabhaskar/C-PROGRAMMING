@@ -38,24 +38,20 @@ void insertAtEnd(int value){
 void deleteNode(int value) {
     struct Node* temp = head;
     struct Node* prev = NULL;
-
     if (temp != NULL && temp->data == value) {
         head = temp->next;
         free(temp);
         printf("Deleted node with value %d\n", value);
         return;
     }
-
     while (temp != NULL && temp->data != value) {
         prev = temp;
         temp = temp->next;
     }
-
     if (temp == NULL) {
         printf("Value %d not found in list\n", value);
         return;
     }
-
     prev->next = temp->next;
     free(temp);
     printf("Deleted node with value %d\n", value);
