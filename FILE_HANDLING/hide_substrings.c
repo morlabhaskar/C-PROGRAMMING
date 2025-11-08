@@ -18,7 +18,7 @@ int main(int argc,char *argv[]){
             memset(ptr,'*',strlen(argv[2]));
             ptr = ptr+strlen(argv[2]);
         }
-        fseek(fptr,-strlen(argv[2]),SEEK_CUR);
+        fseek(fptr,-strlen(str),SEEK_CUR);
         fputs(str,fptr);
     }
     fclose(fptr);
