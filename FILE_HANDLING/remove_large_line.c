@@ -49,9 +49,7 @@ void writeToFile(char (*p)[100],char *filename){
 int main(int argc,char *argv[]){
     char (*lines)[100]=NULL;
     lines=readFromFile(argv[1]);
-    
     lines=removeLargeLine(lines);
-    // printf("large : %d",large);
     writeToFile(lines,argv[1]);
 }
 /*
