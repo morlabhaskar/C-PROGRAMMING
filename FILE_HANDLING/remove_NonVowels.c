@@ -20,10 +20,25 @@ void *readFromFile(char *filename){
     }
     char (*p)[100]=NULL,str[100];
     while(fgets(str,sizeof(str),fptr)){
+        p=realloc(p,(cnt+1)*sizeof(*p));
         strcpy(p[cnt],str);
         cnt++;
     }
     fclose(fptr);
+    return p;
+}
+void *removeNonVowels(char (*p)[100]){
+    for(int i=0;i<cnt;i++){
+        for(int j=0;p[i][j];j++){
+                char *ptr=NULL;
+            if((is_vowel(p[i][j])==0)&&((p[i][j]!=' '))&&((p[i][j]!='\n'))){
+                ptr=&p[i][j];
+                memmove(ptr,ptr+1,strlen(ptr+1)+1);
+                j--;
+            }
+            ptr=NULL;
+        }
+    }
     return p;
 }
 void writeToFile(char (*p)[100],char *filename){
@@ -49,5 +64,16 @@ int main(int argc,char *argv[]){
     }
     char (*lines)[100]=NULL;
     lines=readFromFile(argv[1]);
+    lines=removeNonVowels(lines);
     writeToFile(lines,argv[1]);
 }
+
+/*
+bhaskar../ nani ,,,,
+morla ./;ravi,.7
+
+aa ai 
+oa ai
+*/
+
+

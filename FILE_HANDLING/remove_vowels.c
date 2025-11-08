@@ -35,6 +35,7 @@ void *removeVowels(char (*p)[100]){
             if(is_vowel(p[i][j])){
                 ptr=&p[i][j];
                 memmove(ptr,ptr+1,strlen(ptr+1)+1);
+                j--;
             }
             ptr=NULL;
         }
