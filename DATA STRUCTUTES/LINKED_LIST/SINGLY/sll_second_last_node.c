@@ -1,15 +1,15 @@
-//WAP to delete end Node in sll.
+//WAP to find last but one node(second last node) in a sll.
 #include<stdio.h>
 #include<stdlib.h>
 typedef struct Node{
     int data;
     struct Node* link;
 }NODE;
-NODE* head=NULL;
-NODE* createNode(int val){
-    NODE* new=calloc(1,sizeof(NODE));
-    new->data=val;
-    return new;
+NODE *head=NULL;
+NODE *createNode(int value){
+    NODE *newNode=calloc(1,sizeof(NODE));
+    newNode->data=value;
+    return newNode;
 }
 NODE* insertAtBeg(int value){
     NODE* newNode=createNode(value);
@@ -19,25 +19,21 @@ NODE* insertAtBeg(int value){
     newNode->link=head;
     return newNode;
 }
-NODE *deleteEnd(){
+void findSecLast(){
     if(head==NULL){
-        printf("No List is available");
-        return head;
+        printf("list is empty\n");
+        return;
     }
     if((head->link)==NULL){
-        free(head);
-        head=NULL;
-        return head;
+        printf("Only one node is available,so no last but one node\n");
+        return;
     }
-    NODE *temp = head;
+    NODE *temp=head;
     while((temp->link->link)!=NULL){
         temp=temp->link;
     }
-    NODE *del=temp->link;
-    temp->link=NULL;
-    free(del);
-    free(temp);
-    return head;
+    printf("Last but one Node is %d\n",temp->data);
+    return;
 }
 void displayNodes(){
     NODE* temp=head;
@@ -54,7 +50,7 @@ void displayNodes(){
 int main(){
     char ch;
     while(1){
-        printf("\ni:insert   p:print  d:delete  q:quit\n");
+        printf("\ni:insert   p:print  d:delete Nth data  q:quit\n");
         scanf(" %c",&ch);
         getchar();
         switch(ch){
@@ -64,8 +60,8 @@ int main(){
                 scanf("%d",&num);
                 head=insertAtBeg(num);
                 break;
-            case 'd':
-                head=deleteEnd();
+            case 's':
+                findSecLast();
                 break;
             case 'p':
                 displayNodes();

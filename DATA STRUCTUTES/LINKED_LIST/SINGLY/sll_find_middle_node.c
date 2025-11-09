@@ -1,3 +1,4 @@
+//WAP to find Middle Node in sll.
 #include<stdio.h>
 #include<stdlib.h>
 typedef struct Node{

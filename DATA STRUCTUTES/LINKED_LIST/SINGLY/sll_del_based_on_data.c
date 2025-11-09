@@ -1,3 +1,4 @@
+//WAP to delete Nth Node based on the data in sll.
 #include<stdio.h>
 #include<stdlib.h>
 typedef struct Node{

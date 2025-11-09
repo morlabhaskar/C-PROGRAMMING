@@ -1,3 +1,4 @@
+//WAP to insert Node at Beginning in sll.
 #include<stdio.h>
 #include<stdlib.h>
 typedef struct Node{
