@@ -28,7 +28,6 @@ void *delete_substrings(char (*p)[100],char *sub){
             count++;
             ptr=ptr+strlen(sub);
         }
-        printf("%d\n",count);
         ptr=p[i];
         while((ptr=strstr(ptr,sub))!=NULL){
             if((c==0)||(c==count-1)){
@@ -63,6 +62,7 @@ int main(int argc,char *argv[]){
 
 }
 /*
+
 india@is my country@india
 @is my india@india@country@india
 is india my india@india@india@country@india
@@ -70,4 +70,5 @@ is india my india@india@india@country@india
 @is my country@
 @is my @india@country@
 is  my india@india@india@country@
+
 */
