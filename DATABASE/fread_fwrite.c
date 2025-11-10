@@ -1,79 +1,10 @@
+#include "node.h"
 #include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-
-typedef struct Node{
-    int roll;
-    char name[20];
-    struct Node *link;
-}NODE;
-int size=sizeof(NODE)-sizeof(NODE*);
-NODE* head=NULL;
-NODE* createNode(int roll,char *name){
-    NODE* new=calloc(1,sizeof(NODE));
-    new->roll=roll;
-    strcpy(new->name,name);
-    return new;
-}
-NODE* insertAtEnd(int roll,char *name){
-    NODE* newNode=createNode(roll,name);
-    if(head==NULL){
-        return newNode;
-    }
-    NODE* temp=head;
-    while((temp->link)!=NULL){
-        temp=temp->link;
-    }
-    temp->link=newNode;
-    return head;
-}
-void displayNodes(){
-    NODE* temp=head;
-    if(head==NULL){
-        printf("Linked List is Empty\n");
-        return;
-    }
-    printf("Linked List is :\n");
-    while(temp!=NULL){
-        printf("%d  %s\n",temp->roll,temp->name);
-        temp=temp->link;
-    }
-}
-void save(char *filename){
-    FILE *fptr=NULL;
-    if(head==NULL){
-        printf("Data is Empty\n");
-        return;
-    }
-    fptr=fopen(filename,"w");
-    if(fptr==NULL){
-        printf("file not open\n");
-        return;
-    }
-    NODE *temp=head;
-    while(temp!=NULL){
-        fwrite(temp,size,1,fptr);
-        temp=temp->link;
-    }
-    fclose(fptr);
-     printf("Data saved to file successfully!\n");
-}
-NODE *sync(char *filename){
-    NODE var;
-    FILE *fptr=NULL;
-    fptr=fopen(filename,"r");
-    if(fptr==NULL){
-        printf("file not open\n");
-        return head;
-    }
-    while((fread(&var,size,1,fptr))==1){
-        head=insertAtEnd(var.roll,var.name);
-    }
-    fclose(fptr);
-     printf("Data sync from file successfully!\n");
-    return head;
-}
-//./a.exe  filename
+#include <stdlib.h>
+#include <string.h>
+NODE *head = NULL;
+int size = sizeof(NODE) - sizeof(NODE *);
+//mingw32-make
 int main(int argc,char *argv[]){
     char ch;
     head=sync(argv[1]);
