@@ -185,8 +185,81 @@ STUDENTS *update(STUDENTS *students){
     return students;
 }
 
-int main(){
+void save(STUDENTS *students,char *filename){
+    FILE *fptr = fopen(filename, "w");
+    if (!fptr){
+        printf("\033[1;31mError: Could not open file to save data!\033[0m\n");
+        return;
+    }
+    fwrite(&count, sizeof(int), 1, fptr);
+    for (int i = 0; i < count; i++) {
+        int len;
+
+        len = strlen(students[i].name) + 1;
+        fwrite(&len, sizeof(int), 1, fptr);
+        fwrite(students[i].name, sizeof(char), len, fptr);
+
+        len = strlen(students[i].roll) + 1;
+        fwrite(&len, sizeof(int), 1, fptr);
+        fwrite(students[i].roll, sizeof(char), len, fptr);
+
+        len = strlen(students[i].branch) + 1;
+        fwrite(&len, sizeof(int), 1, fptr);
+        fwrite(students[i].branch, sizeof(char), len, fptr);
+
+        len = strlen(students[i].phone) + 1;
+        fwrite(&len, sizeof(int), 1, fptr);
+        fwrite(students[i].phone, sizeof(char), len, fptr);
+    }
+
+    fclose(fptr);
+    printf("\033[1;32m=== Data Saved Successfully to File ===\033[0m\n");
+}
+
+STUDENTS *syncFromFile(STUDENTS *students,char *filename) {
+    FILE *fp = fopen(filename, "r");
+    if (!fp) {
+        printf("\033[1;33m=== No Previous Data Found ===\033[0m\n");
+        return students;
+    }
+
+    fread(&count, sizeof(int), 1, fp);
+    if (count == 0) {
+        fclose(fp);
+        printf("\033[1;33m=== File is Empty! ===\033[0m\n");
+        return students;
+    }
+
+    students = realloc(students, count * sizeof(STUDENTS));
+
+    for (int i = 0; i < count; i++) {
+        int len;
+
+        fread(&len, sizeof(int), 1, fp);
+        students[i].name = malloc(len);
+        fread(students[i].name, sizeof(char), len, fp);
+
+        fread(&len, sizeof(int), 1, fp);
+        students[i].roll = malloc(len);
+        fread(students[i].roll, sizeof(char), len, fp);
+
+        fread(&len, sizeof(int), 1, fp);
+        students[i].branch = malloc(len);
+        fread(students[i].branch, sizeof(char), len, fp);
+
+        fread(&len, sizeof(int), 1, fp);
+        students[i].phone = malloc(len);
+        fread(students[i].phone, sizeof(char), len, fp);
+    }
+    fclose(fp);
+    printf("\033[1;32m=== Data Synced from File Successfully ===\033[0m\n");
+    return students;
+}
+
+//a.out  filename
+int main(int argc,char *argv[]){
     STUDENTS *students=NULL;
+    students=syncFromFile(students,argv[1]);
     char choice;
     while(1){
         printMenu();
@@ -195,7 +268,8 @@ int main(){
         switch(choice){
             case 'i':students=input(students);break;
             case 'p':print(students);break;
-            case 's':sort(students);break;
+            case 'o':sort(students);break;
+            case 's':save(students,argv[1]);break;
             case 'f':find(students);break;
             case 'd':students=delete(students);break;
             case 'u':students=update(students);break;
