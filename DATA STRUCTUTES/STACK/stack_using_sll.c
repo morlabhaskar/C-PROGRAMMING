@@ -66,7 +66,6 @@ int main(){
             case 4:
                 printf("Byee\n");
                 exit(0);
-
             default:
                 printf("Invalid Operation\n");
                 break;
