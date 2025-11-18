@@ -56,7 +56,7 @@ void print(){
 int main(){
     char ch;
     while(1){
-        printf("\ni:insert   p:print  s:save  q:quit\n");
+        printf("\ni:insert  p:print  s:save  q:quit\n");
         scanf(" %c",&ch);
         getchar();
         switch(ch){

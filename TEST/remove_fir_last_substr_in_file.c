@@ -1,11 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-int cnt=0;
+int cnt=0;//3
 void *readFromFile(char *filename){
     char (*p)[100]=NULL;
     FILE *fptr=NULL;
-    fptr=fopen(filename,"r");
+    fptr=fopen(filename,"r");//fptr=fopen("dest.txt","r");
     if(fptr==NULL){
         printf("File not opened\n");
         exit(0);
@@ -53,16 +53,17 @@ void writeToFile(char (*p)[100],char *filename){
     }
     fclose(fptr);
 }
-//./a.out  filename  substring
+// char argv={".\a.out","dest.txt","india"}
+//   argv[0]      argv[1]   argv[2]
+//   ./a.out      filename  substring
 int main(int argc,char *argv[]){
-    char (*lines)[100]=NULL;
+    char (*lines)[100]=NULL;//char *lines[][100]
     lines=readFromFile(argv[1]);
     lines=delete_substrings(lines,argv[2]);
     writeToFile(lines,argv[1]);
-
 }
-/*
 
+/*
 india@is my country@india
 @is my india@india@country@india
 is india my india@india@india@country@india
@@ -70,5 +71,4 @@ is india my india@india@india@country@india
 @is my country@
 @is my @india@country@
 is  my india@india@india@country@
-
 */
