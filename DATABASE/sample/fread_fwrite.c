@@ -5,6 +5,7 @@
 NODE *head = NULL;
 int size = sizeof(NODE) - sizeof(NODE *);
 //mingw32-make
+//.\a.exe  filename
 int main(int argc,char *argv[]){
     char ch;
     head=sync(argv[1]);
