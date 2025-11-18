@@ -35,7 +35,6 @@ SCHOOL *createSchool(int idd,char *nam,char *block_name,int rooms){
         temp=temp->link;
     }
     temp->link=newNode;
-    
     return head;
 }
 
@@ -88,5 +87,4 @@ int main(){
                 break;
         }
     }
-    
 }
