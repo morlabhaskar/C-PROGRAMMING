@@ -14,7 +14,7 @@ typedef struct School{
 }SCHOOL;
 
 SCHOOL *head=NULL;
-
+int size = sizeof(SCHOOL)-sizeof(SCHOOL*);
 BLOCK *createBlock(char *nam,int room){
     BLOCK *newNode=calloc(1,sizeof(BLOCK));
     strcpy(newNode->name,nam);
@@ -52,11 +52,46 @@ void print(){
         temp=temp->link;
     }
 }
-
-int main(){
+void save(char *filename){
+        FILE *fptr=NULL;
+        if(head==NULL){
+            printf("List is Empty\n");
+            return;
+        }
+        fptr=fopen(filename,"w");
+        if(fptr==NULL){
+            printf("File is Not opened\n");
+            return;
+        }
+        SCHOOL *temp=head;
+        while(temp!=NULL){
+            fwrite(temp,size,1,fptr);
+            temp=temp->link;
+        }
+        fclose(fptr);
+        printf("Data saved Successfully\n");
+}
+SCHOOL *sync(char *filename){
+        FILE *fptr=NULL;
+        fptr=fopen(filename,"r");
+        if(fptr==NULL){
+            printf("File is Not opened\n");
+            return head;
+        }
+        SCHOOL temp;
+        while((fread(&temp,size,1,fptr))==1){
+            head=createSchool(temp.id,temp.name,temp.block->name,temp.block->rooms);
+        }
+        fclose(fptr);
+        printf("Data Sync Successfully\n");
+        return head;
+}
+//a.out  filename
+int main(int argc,char *argv[]){
     char ch;
+    head=sync(argv[1]);
     while(1){
-        printf("\ni:insert  p:print  s:save  q:quit\n");
+        printf("\ni:insert   p:print  s:save  q:quit\n");
         scanf(" %c",&ch);
         getchar();
         switch(ch){
@@ -78,6 +113,9 @@ int main(){
                 break;
             case 'p':
                 print();
+                break;
+            case 's':
+                save(argv[1]);
                 break;
             case 'q':
                 printf("Byee\n");
