@@ -3,8 +3,8 @@
 
 enum {success, fail,no,ok} status;  
 int main(void){  
-	status=ok;  
-	status=no;  
-	printf("The value of status is %d", status);  
+	status=ok; //status = 3
+	status=no;  //status = 2
+	printf("The value of status is %d", status);//The value of status is 2  
 	return 0;  
 }  

@@ -1,5 +1,5 @@
 //Cube of a number
-// #include <stdio.h>
+#include <stdio.h>
 // int main(){
 //     int number;
 //     printf("Enter a Number:");
@@ -277,105 +277,134 @@
 //   printf("z=%d\n",z);
 // }
 
-// #define call(x,y) x##y
+// #define call(x,y) x##y  //xy
 // void main(){
 // int x=5,y=10,xy=20;
-// printf("%d",xy+call(x,y));
+// printf("%d",xy+call(x,y)); //xy+call(x,y)=20+xy=20+20=40
+// }
+
+
+// #define FALSE -1
+// #define TRUE 1
+// #define NULL 0
+// main(){
+//     if(NULL)//if(0)
+//         puts("NULL");
+//     else if(FALSE)//else if(-1)
+//         puts("TRUE");//TRUE
+//     else
+//         puts("FALSE");
 // }
 
 // #define FALSE -1
 // #define TRUE 1
 // #define NULL 0
-// main()
-// {
-// if(NULL)
-// puts("NULL");
-// else if(FALSE)
-// puts("TRUE");
-// else
-// puts("FALSE");
+// main(){
+//     if(FALSE)//if(-1)
+//         puts("NULL");//NULL
+//     if(TRUE)//else if(1)
+//         puts("TRUE");//TRUE
+//     else
+//         puts("FALSE");
 // }
 
 // #include<stdio.h>
 // #define DC 10
-// void main()
-// {
-// #ifdef DC
-// printf("DC=%d ",DC);
-// #else
-// printf("not defined");
-// #endif
-// #undef DC
-// #define DC 66
-// printf("DC=%d ",DC);
+// void main(){
+//     #ifdef DC
+//         printf("DC=%d ",DC);//DC=10
+//     #else
+//         printf("not defined");
+//     #endif
+//     #undef DC
+//     #define DC 66
+//     printf("DC=%d ",DC);//DC=66
 // }
 
 // #include<stdio.h>
 // #define MAX printf("Hello ");
-// printf("Hi ");
+// // printf("Hi ");
 // #define MIN printf("Bye ");
-// main()
-// {
-// if(5>10)
-// MAX
-// else
-// MIN
+// main(){
+//     if(5>10)//false
+//         MAX
+//     else
+//         MIN//printf("Bye ");
 // }
 
 // #include<stdio.h>
-// main()
-// {
-// #define i 10
-// #if i==10
-// printf("True");
-// #else
-// printf("False ");
-// #endif
+// #define MAX printf("Hello ")\
+//            // printf("Hi ");       
+// #define MIN printf("Bye ");      
+// main(){
+//     if(5>10)//false
+//         MAX
+//     else
+//         MIN//printf("Bye ");
 // }
 
 // #include<stdio.h>
-// #define x 5+5
-// int main()
-// {
-// int i;
-// i = x * x * x;
-// printf("%d ",i);
+// main(){
+//     #define i 10
+//     #if i==10//10==10
+//         printf("True");//True
+//     #else
+//         printf("False ");
+//     #endif
+// }
+
+// #include<stdio.h>
+// #define x 5+5//x=5+5
+// int main(){
+//     int i;
+//     i = x * x * x;//i=x*x*x = 5+5*5+5*5+5= 5+(5*5)+(5*5)+5=60
+//     printf("%d ",i);
 // }
 
 // #include<stdio.h>
 // #define _vec(x) ++x * ++x
-// int main()
-// {
-// int a = 3, z;
-// z = ++a * ++a;
-// a -= 3;
-// printf("%d %d", _vec(a), z);
+// int main(){
+//     int a = 3;
+//     int z;
+//     z = ++a * ++a;
+//     a -= 3;
+//     printf("%d %d", _vec(a), z);//16  25
 // }
 
 // #include<stdio.h>
 // #define v 9
-// main()
-// {
-// int b;
-// #define v 10
-// b=v*5;
-// printf("%d",b);
+// main(){
+//     int b;
+//     #define v 10
+//     b=v*5;//b=10*5=50
+//     printf("%d",b);//50
 // }
 
-// #define paste(a,b) a##b 
-// main() 
-// {
-//  int a=3,b=6;
-//  Printf("%d", paste(a,b));
-//  }
+// #define paste(a,b) a##b //ab
+// main() {
+//     int a=3,b=6;
+//     printf("%d", paste(a,b));//printf("%d", ab);//error:ab not defined
+// }
+// #define paste(a,b) a##b //ab
+// main() {
+//     int a=3,b=6,ab=1;
+//     Printf("%d", paste(a,b));//printf("%d", ab);//error
+// }
+
+// #define paste(a,b) a##b //ab
+// main() {
+//     int a=3,b=6,ab=1;
+//     printf("%d", paste(a,b));//printf("%d", ab);//1
+// }
 
 // #define CUBE(x) x*x*x
-// main()
-// {
-// int a,b=3;
-// a=CUBE(b++);
-// printf("%d %d",a,b);
+// main(){
+//     int a,b=3;//4  5  6
+//     a=CUBE(b++);//a=x*x*x = b++ * b++ * b++ = 3 * 4 * 5 = 60
+//     printf("%d %d",a,b);//60  6
 // }
+
+// a=4    a++ = 3         ++a = 4
 
 // #include<stdio.h>
 // #define MAX printf("Hello ");
@@ -393,24 +422,23 @@
 // #define LOOP(a) int i;\
 // for(i=1;i<=a;i++);\
 // printf("%d ",i);
-// void main()
-// {
-// LOOP(5);
+// void main(){
+//     LOOP(5);        //int i;//1 2 3 4 5 6
+//                     //for(i=1;i<=a;i++);//i<=5
+//                     //printf("%d ",i); //6
 // }
 
 // #include<stdio.h>
 // #define Macro(a) printf("Macro=%d",a);
-// void main()
-// {
-// Macro(10);
+// void main(){
+//     Macro(10);//printf("Macro=%d",a); //Macro=10
 // }
 
 // #include<stdio.h>
 // #define NODE(a) a*10+2
-// void main()
-// {
-// int a=NODE(2)*2;
-// printf("%d ",a);
+// void main(){
+//     int a=NODE(2)*2;//a= a*10+2*2 = (2*10)+(2*2)=24
+//     printf("%d ",a);//24
 // }
 
 // #define sum(a,b,c) a+b+c
@@ -557,17 +585,17 @@
 //clear bit        →   num &= ~(1<<bit)
 //toggle bit       →   num ^= (1<<bit)
 
-#include<stdio.h>
-int main(){
-    int a=10;
-    int b=20;
-    int c=30;
-    {
-        int c=b-a;
-        printf("%d\n",c);
-    }
-    printf("%d",c);
-}
+// #include<stdio.h>
+// int main(){
+//     int a=10;
+//     int b=20;
+//     int c=30;
+//     {
+//         int c=b-a;
+//         printf("%d\n",c);
+//     }
+//     printf("%d",c);
+// }
 
 
 
