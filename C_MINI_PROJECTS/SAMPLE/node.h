@@ -15,4 +15,5 @@ void save(char*);
 NODE *createNode(int,char*);
 NODE *insertAtEnd(int,char*);
 NODE *sync(char *);
+
 #endif

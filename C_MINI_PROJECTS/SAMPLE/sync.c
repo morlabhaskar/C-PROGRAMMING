@@ -12,6 +12,6 @@ NODE *sync(char *filename){
         head=insertAtEnd(var.roll,var.name);
     }
     fclose(fptr);
-     printf("Data sync from file successfully!\n");
+    printf("Data sync from file successfully!\n");
     return head;
 }
