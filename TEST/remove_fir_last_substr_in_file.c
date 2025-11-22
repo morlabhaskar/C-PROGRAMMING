@@ -19,24 +19,46 @@ void *readFromFile(char *filename){
     fclose(fptr);
     return p;
 }
+// void *delete_substrings(char (*p)[100],char *sub){
+//     char *ptr=NULL;
+//     for(int i=0;i<cnt;i++){
+//         int count=0,c=0;
+//         ptr=p[i];
+//         while((ptr=strstr(ptr,sub))!=NULL){
+//             count++;
+//             ptr=ptr+strlen(sub);
+//         }
+//         ptr=p[i];
+//         while((ptr=strstr(ptr,sub))!=NULL){
+//             if((c==0)||(c==count-1)){
+//                 memmove(ptr,ptr+strlen(sub),strlen(ptr+strlen(sub))+1);
+//             }
+//             else {
+//                 ptr += strlen(sub);
+//             }
+//             c++;
+//         }
+//     }
+//     return p;
+// }
 void *delete_substrings(char (*p)[100],char *sub){
     char *ptr=NULL;
     for(int i=0;i<cnt;i++){
-        int count=0,c=0;
+        // int count=0,c=0;
+        // ptr=p[i];
+        // while((ptr=strstr(ptr,sub))!=NULL){
+        //     count++;
+        //     ptr=ptr+strlen(sub);
+        // }
         ptr=p[i];
         while((ptr=strstr(ptr,sub))!=NULL){
-            count++;
-            ptr=ptr+strlen(sub);
-        }
-        ptr=p[i];
-        while((ptr=strstr(ptr,sub))!=NULL){
-            if((c==0)||(c==count-1)){
+            // if((c==0)||(c==count-1)){
                 memmove(ptr,ptr+strlen(sub),strlen(ptr+strlen(sub))+1);
-            }
-            else {
+            // }
+            // else {
                 ptr += strlen(sub);
-            }
-            c++;
+            // }
+            // c++;
         }
     }
     return p;
@@ -72,3 +94,5 @@ is india my india@india@india@country@india
 @is my @india@country@
 is  my india@india@india@country@
 */
+
+
