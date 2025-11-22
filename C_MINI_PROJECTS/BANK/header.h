@@ -6,7 +6,6 @@ typedef struct Admin{
     char name[20];
     char Apassword[20];
     int Admin_count;
-    struct Account *next;
 }ADMIN;
 
 typedef struct Account{
