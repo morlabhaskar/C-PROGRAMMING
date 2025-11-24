@@ -1,6 +1,15 @@
 #include<stdio.h>
 #include<string.h>
 #include "header.h"
+
+ADMIN *createAdminNode(int emp_id,char *name,char *Apassword,int Admin_count){
+    ADMIN *new=calloc(1,sizeof(ADMIN));
+    new->emp_id=emp_id;
+    strcpy(new->name,name);
+    strcpy(new->Apassword,Apassword);
+    new->Admin_count=Admin_count;
+    return new;
+}
 void signUpAdmin(char *filename){
     FILE *fptr=NULL;
     fptr=fopen(filename,"r");

@@ -17,10 +17,17 @@ typedef struct Account{
     struct Account *next;
 }ACCOUNT;
 
-extern ACCOUNT *head;
+extern ACCOUNT *accounts_head;
+extern ADMIN *admin_head;
 extern int size;
 extern int flag=0;
 extern int adminFound=0;
+
+//admin
+ADMIN *createAdminNode(int ,char *,char *,int );
+ADMIN *AdminInsertAtEnd(int ,char *,int ,char *);
+
+
 
 ACCOUNT *createNode(int ,char* ,char* ,float ,char *);
 void login_menu();

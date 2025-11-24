@@ -1,12 +1,15 @@
 #include<stdio.h>
 #include "header.h"
-ACCOUNT *head=NULL;
+ACCOUNT *accounts_head=NULL;
+ADMIN *admin_head=NULL;
 int size=sizeof(ACCOUNT)-sizeof(ACCOUNT*);
 
+//mingw32-make
 //./a.out  filename
 int main(int argc,char *argv[]){
     char ch;
-    head=sync(head);
+    // head=sync(head);
+    admin_head=admin_sync(argv[1]);
     while(1){
         if(flag==0){
             login_menu();
