@@ -20,12 +20,16 @@ typedef struct Account{
 extern ACCOUNT *accounts_head;
 extern ADMIN *admin_head;
 extern int size;
-extern int flag=0;
-extern int adminFound=0;
+extern int flag;
+extern int adminFound;
 
 //admin
-ADMIN *createAdminNode(int ,char *,char *,int );
-ADMIN *AdminInsertAtEnd(int ,char *,int ,char *);
+ADMIN *createAdminNode(int emp_id,char *name,char *Apassword,int Admin_count);
+ADMIN *AdminFetch(int admin_count,char *aPass,int emp_id,char *name);
+ADMIN *admin_sync(char *filename);
+// void admin_save(char *filename);
+void signUpAdmin(char *filename);
+void loginAdmin();
 
 
 

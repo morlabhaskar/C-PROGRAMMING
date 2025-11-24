@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<string.h>
 #include "header.h"
 
@@ -10,13 +11,19 @@ ADMIN *createAdminNode(int emp_id,char *name,char *Apassword,int Admin_count){
     new->Admin_count=Admin_count;
     return new;
 }
+ADMIN *AdminFetch(int admin_count,char *aPass,int emp_id,char *name){
+    ADMIN *newNode=createAdminNode(emp_id,name,aPass,admin_count);
+    return newNode;
+}
+
 void signUpAdmin(char *filename){
     FILE *fptr=NULL;
     fptr=fopen(filename,"r");
     ADMIN var;
-    if(fread(&var,size,1,fptr)){
-        flag=1;
+    if(fread(&var,sizeof(ADMIN),1,fptr)==1){
+        
         printf("Already Admin is Available,Please Login Existing Account\n");
+        flag=1;
         fclose(fptr);
         return;
     }
@@ -37,10 +44,11 @@ void signUpAdmin(char *filename){
     getchar();
     fgets(admin.name,sizeof(admin.name),stdin);
     if(admin.name[strlen(admin.name)-1]=='\n') admin.name[strlen(admin.name)-1]='\0';
-    admin.Admin_count++;
+    admin.Admin_count=1;
     fwrite(&admin,sizeof(ADMIN),1,fptr);
-    printf("Admin SignUp Successfully!\n");
+    fclose(fptr);
     flag=1;
+    printf("Admin SignUp Successfully!\n");
 }
 
 void loginAdmin(){

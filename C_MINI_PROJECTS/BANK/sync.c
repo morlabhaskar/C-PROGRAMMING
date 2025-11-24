@@ -9,6 +9,10 @@ ADMIN *admin_sync(char *filename){
         return admin_head;
     }
     if(fread(&var,sizeof(ADMIN),1,fptr)==1){
-        admin_head=AdminInsertAtEnd(var.Admin_count,var.Apassword,var.emp_id,var.name);
+        admin_head=AdminFetch(var.Admin_count,var.Apassword,var.emp_id,var.name);
     }
+    
+    fclose(fptr);
+    printf("Admin Data Sync Successfully\n");
+    return admin_head;
 }

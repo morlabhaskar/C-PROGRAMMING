@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include "header.h"
 #include<string.h>
 
@@ -10,4 +11,5 @@ ACCOUNT *createNode(int acc_no,char *password,char *name,float bal,char *phn){
     new->balance=bal;
     strcpy(new->phone,phn);
     return new;
+
 }

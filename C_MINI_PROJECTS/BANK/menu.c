@@ -2,6 +2,7 @@
 void login_menu(){
     printf("========== BANK LOGIN TYPE =========\n");
     printf("u : user login\n");
+    printf("s : admin signUp\n");
     printf("a : admin login\n");
     printf("q : Quit\n");
     printf("====================================\n");

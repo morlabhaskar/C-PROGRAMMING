@@ -1,5 +1,5 @@
-a.exe : main.o sync.o save.o user.o admin.o insertAtEnd.o createAccount.o
-	gcc main.o sync.o save.o user.o admin.o insertAtEnd.o createAccount.o
+a.exe : main.o sync.o save.o user.o admin.o menu.o createAccount.o
+	gcc main.o sync.o save.o user.o admin.o menu.o createAccount.o
 main.o : main.c
 	gcc -c main.c
 sync.o : sync.c
@@ -10,8 +10,10 @@ user.o : user.c
 	gcc -c user.c
 admin.o : admin.c
 	gcc -c admin.c
-insertAtEnd.o : insertAtEnd.c
-	gcc -c insertAtEnd.c
+menu.o : menu.c
+	gcc -c menu.c
+# insertAtEnd.o : insertAtEnd.c
+# 	gcc -c insertAtEnd.c
 createAccount.o : createAccount.c
 	gcc -c createAccount.c
 	
