@@ -597,6 +597,15 @@
 //     printf("%d",c);
 // }
 
+int main(){
+    int i = 5;
+    int a = ++i;
+    int a = i++;
+    printf("%d\n",i);
+    printf("%d",a);
+    printf("%d\n",++i);
+    printf("%d",i++);
+}
 
 
 
