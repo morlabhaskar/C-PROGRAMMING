@@ -42,11 +42,6 @@
 //     printf("%s\n",str);
 // }
 
-
-
-
-
-
 #include<stdio.h>
 #include<string.h>
 int is_upper(char ch){
@@ -69,10 +64,10 @@ int main(){
     char str[100];
     int flag=1;
     INPUT:
+    printf("Enter the String :\n");
     fgets(str,sizeof(str),stdin);
-    if(str[strlen(str)-1]=='\n'){
-        str[strlen(str)-1]='\0';
-    }
+    if(str[strlen(str)-1]=='\n') str[strlen(str)-1]='\0';
+    
     for(int i=0;str[i];i++){
         if(is_upper(str[i])){
             flag=0;

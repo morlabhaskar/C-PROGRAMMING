@@ -44,21 +44,10 @@ void *readFromFile(char *filename){
 void *delete_substrings(char (*p)[100],char *sub){
     char *ptr=NULL;
     for(int i=0;i<cnt;i++){
-        // int count=0,c=0;
-        // ptr=p[i];
-        // while((ptr=strstr(ptr,sub))!=NULL){
-        //     count++;
-        //     ptr=ptr+strlen(sub);
-        // }
         ptr=p[i];
         while((ptr=strstr(ptr,sub))!=NULL){
-            // if((c==0)||(c==count-1)){
-                memmove(ptr,ptr+strlen(sub),strlen(ptr+strlen(sub))+1);
-            // }
-            // else {
-                ptr += strlen(sub);
-            // }
-            // c++;
+            memmove(ptr,ptr+strlen(sub),strlen(ptr+strlen(sub))+1);
+            ptr += strlen(sub);
         }
     }
     return p;
@@ -75,9 +64,7 @@ void writeToFile(char (*p)[100],char *filename){
     }
     fclose(fptr);
 }
-// char argv={".\a.out","dest.txt","india"}
-//   argv[0]      argv[1]   argv[2]
-//   ./a.out      filename  substring
+
 int main(int argc,char *argv[]){
     char (*lines)[100]=NULL;//char *lines[][100]
     lines=readFromFile(argv[1]);

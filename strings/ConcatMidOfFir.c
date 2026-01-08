@@ -18,7 +18,6 @@ int main(){
     strcpy(temp,str1+mid);
     strcpy(str1+mid,str2);
     strcpy(str1+strlen(str1),temp);
-    //strcat(str1,temp);
 
     printf("%s\n",str1);
 }

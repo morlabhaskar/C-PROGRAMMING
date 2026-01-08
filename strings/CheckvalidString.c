@@ -4,8 +4,8 @@
 #include<ctype.h>
 int is_alpha(char ch){
     ch = tolower(ch);
-    if(ch >=97 && ch <= 122) return 1;
-    else return 0;
+    if(ch >='a' && ch <= 'z') return 1;
+    return 0;
 }
 int main(){
     char str[30];

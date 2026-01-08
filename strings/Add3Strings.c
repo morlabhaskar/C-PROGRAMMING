@@ -11,15 +11,10 @@ int main(){
     printf("Enter a String3 :\n");
     fgets(s3,sizeof(s3),stdin);
 
-    if(s1[strlen(s1)-1] == '\n'){
-        s1[strlen(s1)-1] = '\0';
-    }
-    if(s2[strlen(s2)-1] == '\n'){
-        s2[strlen(s2)-1] = '\0';
-    }
-    if(s3[strlen(s3)-1] == '\n'){
-        s3[strlen(s3)-1] = '\0';
-    }
+    if(s1[strlen(s1)-1] == '\n') s1[strlen(s1)-1] = '\0';
+    if(s2[strlen(s2)-1] == '\n') s2[strlen(s2)-1] = '\0';
+    if(s3[strlen(s3)-1] == '\n') s3[strlen(s3)-1] = '\0';
+
     int i;
     for(i=0;s1[i]!='\0';i++){
         s4[i] = s1[i];

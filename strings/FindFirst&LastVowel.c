@@ -5,11 +5,11 @@
 int is_vowel(char ch){
     ch = tolower(ch);
     switch (ch){
-    case 'a':
-    case 'e':
-    case 'i':
-    case 'o':
-    case 'u':return 1;
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':return 1;
     }
     return 0;
 }
