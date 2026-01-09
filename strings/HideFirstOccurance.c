@@ -17,20 +17,15 @@ int main(){
     char *ptr = NULL;
     printf("Enter a String :\n");
     fgets(str,sizeof(str),stdin);
-
-    //For removing '\n' before the '\0' character
-    if(str[strlen(str)-1] == '\n'){
-        str[strlen(str)-1] = '\0';
-    }
+    if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
+    printf("Enter the Character :\n");
     ch = getchar();
-    // ptr = strchr(str,ch);
     ptr = my_strchr(str,ch);
     if(ptr == NULL){
         printf("Character Not Found\n");
     }
     else{
         printf("Character Found at Index : %d\n",ptr-str);
-        //void *memset(void *s, int c, size_t n);
         memset(ptr,'*',1);
     }
     printf("%s\n",str);

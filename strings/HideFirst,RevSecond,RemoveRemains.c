@@ -11,22 +11,16 @@ int main(){
     printf("Enter a SubString :\n");
     fgets(sub,sizeof(sub),stdin);
 
-    //For removing '\n' before the '\0' character
-    if(str[strlen(str)-1] == '\n'){
-        str[strlen(str)-1] = '\0';
-    }
-    if(sub[strlen(sub)-1] == '\n'){
-        sub[strlen(sub)-1] = '\0';
-    }
+    if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
+    if(sub[strlen(sub)-1] == '\n') sub[strlen(sub)-1] = '\0';
+    
     ptr=str;
     for(int j=strlen(sub)-1;j>=0;j--){
-        temp[i] = sub[j];
-        i++;
+        temp[i++] = sub[j];
     }
     printf("temp = \"%s\"\n",temp);
     while((ptr=strstr(ptr,sub))!=NULL){
         cnt++;
-        
         if(cnt==1){
             memset(ptr,'*',strlen(sub));
             ptr=ptr+strlen(sub);
@@ -36,9 +30,6 @@ int main(){
             ptr=ptr+strlen(sub);
         }
         else{
-            // if(cnt<3){
-            //     ptr = ptr+strlen(sub);
-            // }
             memmove(ptr,ptr+strlen(sub),strlen(ptr+strlen(sub))+1);
         }
         
