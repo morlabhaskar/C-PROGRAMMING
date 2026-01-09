@@ -8,9 +8,7 @@ int main(){
     char str[100],*ptr=NULL;
     printf("Enter a String :\n");
     fgets(str,sizeof(str),stdin);
-    if(str[strlen(str)-1] == '\n'){
-        str[strlen(str)-1] = '\0';
-    }
+    if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
     ptr = str;
     ptr = strtok(ptr," ");
     while(ptr != NULL){

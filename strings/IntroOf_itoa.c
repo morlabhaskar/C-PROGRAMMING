@@ -33,11 +33,8 @@
 //     printf("%s\n",temp3);
 // }
 
-
-
 #include <stdio.h>
 #include <string.h>
-
 // Function to reverse a string (helper function)
 void reverse(char str[]) {
     int len = strlen(str);
@@ -47,54 +44,43 @@ void reverse(char str[]) {
         str[len - i - 1] = temp;
     }
 }
-
 // User-defined itoa function
 char* my_itoa(int num, char* str, int base) {
     int i = 0;
     int isNegative = 0;
-
     // Handle 0 explicitly
     if (num == 0) {
         str[i++] = '0';
         str[i] = '\0';
         return str;
     }
-
     // Handle negative numbers for base 10
     if (num < 0 && base == 10) {
         isNegative = 1;
         num = -num;
     }
-
     // Process digits
     while (num != 0) {
         int rem = num % base;
         str[i++] = (rem > 9) ? (rem - 10) + 'A' : rem + '0';
         num = num / base;
     }
-
     // Add '-' if the number is negative
     if (isNegative)
         str[i++] = '-';
-
     str[i] = '\0';
-
     // Reverse the string
     reverse(str);
-
     return str;
 }
 
 int main() {
     char str[30];
-
     printf("Decimal: %s\n", my_itoa(123, str, 10));  // 123
     printf("Hex: %s\n", my_itoa(123, str, 16));      // 0x7B
     printf("Octal: %s\n", my_itoa(123, str, 8));     // 0173
     printf("binary: %s\n", my_itoa(123, str, 2));     // 1111011
     printf("Negative: %s\n", my_itoa(-123, str, 10)); // -123
-
-    return 0;
 }
 
 

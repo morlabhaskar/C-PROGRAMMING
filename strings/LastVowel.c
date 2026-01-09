@@ -5,11 +5,11 @@
 int is_vowel(char ch){
     ch = tolower(ch);
     switch (ch){
-    case 'a':
-    case 'e':
-    case 'i':
-    case 'o':
-    case 'u':return 1;
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':return 1;
     }
     return 0;
 }
@@ -19,10 +19,7 @@ int main(){
     printf("Enter a String :\n");
     fgets(str,sizeof(str),stdin);
 
-    //For removing '\n' before the '\0' character
-    if(str[strlen(str)-1] == '\n'){
-        str[strlen(str)-1] = '\0';
-    }
+    if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
     printf("%s\n",str);
     for(int i=strlen(str);i>=0;i--){
         // printf("str[%d]=%c\n",i,str[i]);

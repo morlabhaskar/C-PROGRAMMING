@@ -23,7 +23,6 @@ int main(){
         else{
             memmove(ptr,ptr+strlen(sub),strlen(ptr+strlen(sub))+1);
         }
-        
     }
     printf("%s\n",str);
 }

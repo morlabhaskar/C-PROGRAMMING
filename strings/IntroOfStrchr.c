@@ -5,7 +5,6 @@
 
 #include<stdio.h>
 #include<string.h>
-
 char* my_strchr(char *ptr,char ch){
     while((*ptr) != '\0'){
         if((*ptr)==ch){
@@ -15,16 +14,14 @@ char* my_strchr(char *ptr,char ch){
     }
     return NULL;
 }
-
 int main(){
     char str[30],ch;
     char *ptr = NULL;
     printf("Enter a String :\n");
     fgets(str,sizeof(str),stdin);
 
-    //For removing '\n' before the '\0' character
     if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
-
+    printf("Enter the Character :\n");
     ch = getchar();
     ptr = str;
     // ptr = strchr(str,ch);

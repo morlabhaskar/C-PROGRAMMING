@@ -16,15 +16,12 @@ int main(){
     if(str[strlen(str)-1] == '\n'){
         str[strlen(str)-1] = '\0';
     }
-
     for(int i=0;str[i] != '\0';i++){
-        
         if(isVowel(str[i]) && isVowel(str[i+1])){ 
             str[i] = '*';
             str[i+1] = '*';
             cnt++;
         }
-        
     }
     if(cnt == 0){
         printf("there is no pair of vowels to hide");
