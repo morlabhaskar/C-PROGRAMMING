@@ -31,5 +31,4 @@ int main(){
     }
     replace_null_with_space(str,len);
     printf("%s\n",str);
-    
 }

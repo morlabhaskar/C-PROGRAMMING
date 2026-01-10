@@ -7,12 +7,8 @@ int main(){
     fgets(str1,sizeof(str1),stdin);
     printf("Enter a String2 :\n");
     fgets(str2,sizeof(str2),stdin);
-    if(str1[strlen(str1)-1] == '\n'){
-        str1[strlen(str1)-1] = '\0';
-    }
-    if(str2[strlen(str2)-1] == '\n'){
-        str2[strlen(str2)-1] = '\0';
-    }
+    if(str1[strlen(str1)-1] == '\n') str1[strlen(str1)-1] = '\0';
+    if(str2[strlen(str2)-1] == '\n') str2[strlen(str2)-1] = '\0';
 
     printf("\n Output is : \n");
     int total_len = strlen(str1) + strlen(str2),one=0,two=0;

@@ -21,10 +21,8 @@ int main(){
     printf("Enter a String :\n");
     fgets(str,sizeof(str),stdin);
 
-    //For removing '\n' before the '\0' character
-    if(str[strlen(str)-1] == '\n'){
-        str[strlen(str)-1] = '\0';
-    }
+    if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
+    
     check_first_last_char(str);
     printf("After Changing :\n");
     printf("%s\n",str);

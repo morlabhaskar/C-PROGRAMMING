@@ -10,17 +10,13 @@ int main(){
     printf("Enter Single Character :\n");
     scanf("%c",&ch);
 
-    //For removing '\n' before the '\0' character
-    if(str[strlen(str)-1] == '\n'){
-        str[strlen(str)-1] = '\0';
-    }
-
+    if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
+    
     for(int i=0;str[i];i++){
-            if(str[i]==ch){
-                cnt++;
-                flag=0;
-            }
-        
+        if(str[i]==ch){
+            cnt++;
+            flag=0;
+        }
     }
     if(flag){
         printf("not found");
@@ -28,5 +24,4 @@ int main(){
     else{
         printf("%d\n",cnt);
     }
-    
 }

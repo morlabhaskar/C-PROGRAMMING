@@ -14,7 +14,7 @@ int is_vowel(char ch){
 int main(){
     char str[100],temp;
     char *ptr = NULL;
-    int i,j;
+    int i,j=0;
     printf("Enter a String :\n");
     fgets(str,sizeof(str),stdin);
     

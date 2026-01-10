@@ -18,10 +18,7 @@ int main(){
     printf("Enter a String :\n");
     fgets(str,sizeof(str),stdin);
 
-    //For removing '\n' before the '\0' character
-    if(str[strlen(str)-1] == '\n'){
-        str[strlen(str)-1] = '\0';
-    }
+    if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
     for(int i=0;str[i];i++){
         if(is_vowel(str[i])){
             memmove(str+i,str+i+1,strlen(str+i+1)+1);

@@ -38,12 +38,8 @@ int main(){
     printf("Enter a String :\n");
     fgets(str,sizeof(str),stdin);
 
-    //For removing '\n' before the '\0' character
-    if(str[strlen(str)-1] == '\n'){
-        str[strlen(str)-1] = '\0';
-    }
+    if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
     int result = check_palindrome(str);
-
     if(result){
         printf("Given String  \"%s\" is Palindrome",str);
     }
