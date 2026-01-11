@@ -3,7 +3,6 @@
 void intput_array(char (*ptr)[10],int row){
     for(int i=0;i<row;i++){
         fgets(ptr[i],sizeof(ptr[i]),stdin);
-        //For removing '\n' before the '\0' character
         if(ptr[i][strlen(ptr[i])-1]=='\n') ptr[i][strlen(ptr[i])-1]='\0';
     }
 }
@@ -16,10 +15,10 @@ void print_array(char (*ptr)[10],int row){
     }
 }
 int main(){
-    char arr[5][10]={"int","char","float","double"};
+    char arr[5][10]={"int","char","float","double","abc"};
     int row=sizeof(arr)/sizeof(arr[0]);
     printf("Enter Input Arrays :\n");
-    intput_array(arr,row);
+    // intput_array(arr,row);
     printf("Arrays are :\n");
     print_array(arr,row);
 }

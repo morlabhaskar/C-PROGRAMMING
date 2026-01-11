@@ -3,7 +3,6 @@
 void intput_array(char (*ptr)[10],int row){
     for(int i=0;i<row;i++){
         fgets(ptr[i],sizeof(ptr[i]),stdin);
-        //For removing '\n' before the '\0' character
         if(ptr[i][strlen(ptr[i])-1]=='\n') ptr[i][strlen(ptr[i])-1]='\0';
     }
 }

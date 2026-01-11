@@ -15,9 +15,10 @@ void printMenu() {
     printf("|       i : Input Record                    |\n");
     printf("|       p : Print All Records               |\n");
     printf("|       f : Find Record by Name             |\n");
-    printf("|       s : Sort Records by Name            |\n");
+    printf("|       s : Save Records                    |\n");
+    printf("|       o : Sort Records by Name            |\n");
     printf("|       d : Delete Record by Name           |\n");
-    printf("|       d : Update Record by Name           |\n");
+    printf("|       u : Update Record by Name           |\n");
     printf("|       q : Quit                            |\n");
     printf("|===========================================|\n");
     printf("Enter your choice: ");
@@ -31,7 +32,6 @@ char *getString(){
     }while(ptr[i++]!='\n');
     ptr[i-1]='\0';
     return ptr;
-
 }
 STUDENTS *input(STUDENTS *students){
     students=realloc(students,(count+1)*sizeof(STUDENTS));
@@ -46,7 +46,6 @@ STUDENTS *input(STUDENTS *students){
     count++;
     printf("\033[1;32m=== Record Added Successfully ===\033[0m\n");
     return students;
-
 }
 void print(STUDENTS *students){
     if(count==0){
@@ -80,7 +79,7 @@ void sort(STUDENTS *students){
             }
         }
     }
-    if(count>=2) printf("\033[1;32m=== Sorted Successfully ===\033[0m\n");
+    printf("\033[1;32m=== Sorted Successfully ===\033[0m\n");
 }
 void find(STUDENTS *students){
     if(count==0){
@@ -165,15 +164,19 @@ STUDENTS *update(STUDENTS *students){
     if(found != -1){
         char *temp=NULL;
         temp=status("Name");
+        free(students[found].name);
         students[found].name=temp;
         free(temp);
         temp=status("Roll No");
+        free(students[found].roll);
         students[found].roll=temp;
         free(temp);
         temp=status("Branch");
+        free(students[found].branch);
         students[found].branch=temp;
         free(temp);
         temp=status("Phone");
+        free(students[found].phone);
         students[found].phone=temp;
         free(temp);
         printf("\033[1;32m=== Record Updated Successfully! ===\033[0m\n");

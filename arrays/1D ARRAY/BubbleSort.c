@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-void bubble_sort(int arr[],int len){
+void bubble_sort(int *arr,int len){
     int temp;
     for(int i=len-1;i>=1;i--){
         for(int j=0;j<i;j++){
@@ -12,7 +12,6 @@ void bubble_sort(int arr[],int len){
         }
     }
 }
-
 int main(){
     int arr[5],n;
     printf("Enter N number of Elements :\n");

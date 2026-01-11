@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 #define EVENNUMRANGE(MIN,MAX) {int i; \
-	                       for(i=MIN;i<MAX;i++) \
-	                	{if(i%2==0)printf("%d ",i);}}
+for(i=MIN;i<MAX;i++) \
+{if(i%2==0)printf("%d ",i);}}
 /*
 void evennumrange(int min,int max)
 {

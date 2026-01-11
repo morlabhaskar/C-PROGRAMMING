@@ -1,6 +1,12 @@
 //This is Best Example for "Call By Value"
 #include<stdio.h>
-void swap(int,int);
+void swap(int a,int b){
+    int temp = a;
+    a = b;
+    b = temp;
+    printf("In Swap Function :\n");
+    printf("a = %d , b = %d\n",a,b);
+}
 int main(){
     int a=10,b=20;
     printf("Before Swapping :\n");
@@ -10,10 +16,3 @@ int main(){
     printf("a = %d , b = %d\n",a,b);
 }
 
-void swap(int a,int b){
-    int temp = a;
-    a = b;
-    b = temp;
-    printf("In Swap Function :\n");
-    printf("a = %d , b = %d\n",a,b);
-}

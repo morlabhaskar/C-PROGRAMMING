@@ -1,6 +1,5 @@
 #include<stdio.h>
-int cntDigits(int var)
-{
+int cntDigits(int var){
 	int cnt=0;
 	while(var){
 		++cnt;
@@ -8,8 +7,7 @@ int cntDigits(int var)
 	}
     return cnt;
 }
-int main()
-{
+int main(){
 	int a,b,min,max;
 	int width;
 	printf("Enter range:\n");
@@ -21,18 +19,12 @@ int main()
         // max=a;
         min ^= max ^= min ^= max;
     }
-
     width=cntDigits(max)+2;
-
-	for(a=min;a<=max;a++)
-	{
-		for(b=1;b<=10;b++)
-		{
+	for(a=min;a<=max;a++){
+		for(b=1;b<=10;b++){
 			printf("%*d",width,a*b);
 		}
         printf("\n");
-
 	}
-
 	return 0;
 }

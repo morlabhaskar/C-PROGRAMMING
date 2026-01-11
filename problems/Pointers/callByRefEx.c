@@ -1,6 +1,10 @@
 //This is Best Example for "Call By Referance"
 #include<stdio.h>
-void swap(int*,int*);
+void swap(int* a,int* b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
 int main(){
     int a=10,b=20;
     printf("Before Swapping :\n");
@@ -10,10 +14,3 @@ int main(){
     printf("a = %d , b = %d\n",a,b);
 }
 
-void swap(int* a,int* b){
-    //int *a = &a;
-    //int *b = &b;
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}

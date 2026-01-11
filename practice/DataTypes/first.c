@@ -7,7 +7,6 @@ int main(){
     v1*=2;// v1=v1*2     v1 = 100 * 2 = 200
     printf("v1=%c %d\n",v1,v1);  //garbage   -56        binary msb of 200 is 1 so "-" and 2's of 200 is 56 so -56
 }
-
 //output :
 // v1=2 50
 // v1=d 100

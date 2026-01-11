@@ -2,8 +2,7 @@
 
 #define DEBUG
 
-int main()
-{
+int main(){
 
 #ifdef DEBUG
 	printf("Debug messages are ON\n");
@@ -21,6 +20,7 @@ int main()
 #ifdef DEBUG
 	printf("Debug messages are ON\n");
 #endif
+#define DEBUG
 	printf("Hello World...!");
 #ifdef DEBUG
 	printf("Debug messages are ON\n");

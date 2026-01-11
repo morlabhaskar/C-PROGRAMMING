@@ -1,10 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 int main(){
-    // int *arr[4];
-    // printf("%lu\n",sizeof(arr));//16  → for 32 bit cpu
-    // printf("%lu\n",sizeof(*arr));//4
-    // printf("%lu\n",sizeof(**arr));//4
+    int *arr[4];
+    printf("%lu\n",sizeof(arr));//16  → for 32 bit cpu
+    printf("%lu\n",sizeof(*arr));//4
+    printf("%lu\n",sizeof(**arr));//4
 
     // int *arr[5];
     // printf("%lu\n",sizeof(arr));//20  → for 32 bit cpu

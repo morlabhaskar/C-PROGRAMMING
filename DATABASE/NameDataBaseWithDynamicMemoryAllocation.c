@@ -18,7 +18,6 @@ void printMenu() {
     printf("=========================================\n");
     printf("Enter your choice:\n");
 }
-
 char *getString(){
     int i=0;
     char *p=NULL;
@@ -29,14 +28,12 @@ char *getString(){
     p[i-1]='\0';
     return p;
 }
-
 void *input(char **ptr){
     ptr=realloc(ptr,(count+1)*sizeof(*ptr));
     printf("Enter Name :\n");
     ptr[count++]=getString();
     return ptr;
 }
-
 void print(char **ptr){
     if(count == 0) printf("\033[1;33m=== Data is Empty! ===\033[0m\n");
     else {
@@ -49,16 +46,19 @@ void print(char **ptr){
         printf("\033[0m");
     }
 }
-
 void sort(char **ptr){
     if(count<2){
         printf("\033[1;33m=== The Data is Too Short! ===\033[0m\n");
         return;
     }
+    // char temp[30];
     char *temp;
     for(int i=count-1;i>=0;i--){
         for(int j=0;j<i;j++){
             if(strcmp(ptr[j],ptr[j+1])>0){
+                // strcpy(temp,ptr[j]);
+                // strcpy(ptr[j],ptr[j+1]);
+                // strcpy(ptr[j+1],temp);
                 temp=ptr[j];
                 ptr[j]=ptr[j+1];
                 ptr[j+1]=temp;
@@ -88,7 +88,6 @@ void find(char **ptr){
     }         
     
 }
-
 void *delete(char **ptr){
     int i;
     if(count==0){
@@ -112,7 +111,6 @@ void *delete(char **ptr){
     else printf("\033[1;31m=== Record Deleted Successfully ===\033[0m\n");
     return ptr;
 }
-
 int main(){
     char **names=NULL;
     char choice;
@@ -127,10 +125,10 @@ int main(){
             case 'o':sort(names);break;
             case 'f':find(names);break;
             case 'q':
-                    for(int i=0;i<count;i++) free(names[i]);
-                    free(names);
-                    printf("\033[1;32mExiting Program... Goodbye!\033[0m\n");
-                    return 0;
+                for(int i=0;i<count;i++) free(names[i]);
+                free(names);
+                printf("\033[1;32mExiting Program... Goodbye!\033[0m\n");
+                return 0;
             default : printf("\033[1;33m=== ERROR : Invalid Entry ! ===\033[0m\n");
         }
     }

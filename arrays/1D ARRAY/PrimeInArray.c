@@ -1,5 +1,18 @@
 #include<stdio.h>
-int checkPrime(int);
+int checkPrime(int num){
+    int cnt = 0;
+    for(int i=1;i<=num;i++){
+        if(num%i == 0){
+            cnt++;
+        }
+    }
+    if(cnt == 2){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
 int main(){
     int arr[5],n=5,cnt=0;
     printf("Enter %d Array Elements :\n",n);
@@ -18,18 +31,4 @@ int main(){
         }
     }
     printf("\nArray Prime Count is : %d\n",cnt);
-}
-int checkPrime(int num){
-    int cnt = 0;
-    for(int i=1;i<=num;i++){
-        if(num%i == 0){
-            cnt++;
-        }
-    }
-    if(cnt == 2){
-        return 1;
-    }
-    else{
-        return 0;
-    }
 }

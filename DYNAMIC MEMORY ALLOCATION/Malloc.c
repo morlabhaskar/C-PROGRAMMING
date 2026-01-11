@@ -6,7 +6,10 @@ int main(){
     scanf("%d",&n);
     arr=(int*)malloc(n*sizeof(int));
     printf("Enter Array :\n");
-    for(int i=0;i<n;i++) scanf("%d",&arr[i]);
+    for(int i=0;i<n;i++) 
+        scanf("%d",&arr[i]);
     printf("Array is :\n");
-    for(int i=0;i<n;i++) printf("%d ",arr[i]);
+    for(int i=0;i<n;i++) 
+        printf("%d ",arr[i]);
+    free(arr);
 }

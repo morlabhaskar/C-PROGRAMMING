@@ -3,7 +3,6 @@
 int main() {
     int arr[5],i;
     printf("Enter 5 integers:\n");
-
     for (i = 0; i < 5; i++) {
         scanf("%d", &arr[i]);
     }
@@ -13,8 +12,4 @@ int main() {
             printf("%d\t",arr[i]);
         }
     }
-
-
-
-
 }
