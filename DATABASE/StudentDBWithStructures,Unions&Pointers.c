@@ -257,7 +257,6 @@ V25HE2 *delete(V25HE2 *student){
 //     }
 //     return student;
 // }
-
 int main(){
     V25HE2 *students=NULL;
     char choice;
@@ -284,5 +283,4 @@ int main(){
             default: printf("\033[1;33m=== Invalid Choice! Try Again. ===\033[0m\n");
         }
     }
-
 }
