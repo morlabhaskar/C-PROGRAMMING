@@ -6,7 +6,7 @@ struct Student{
 }student;
 int main(){
     printf("Enter a Name :\n");
-    // scanf("%s",stu.name);
+    // scanf("%s",student.name);
     fgets(student.name,sizeof(student.name),stdin);
     if(student.name[strlen(student.name)-1] == '\n') student.name[strlen(student.name)-1] = '\0';
     printf("Enter a Age :\n");

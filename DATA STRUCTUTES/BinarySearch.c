@@ -14,7 +14,6 @@ int main() {
     } else {
         printf("Target not found in array.\n");
     }
-
     return 0;
 }
 
