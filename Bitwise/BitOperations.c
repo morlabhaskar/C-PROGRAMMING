@@ -1,7 +1,6 @@
 #include<stdio.h>
 // #include<stdio_ext.h>
-void printMenu(void)
-{
+void printMenu(void){
 		printf("\nMENU\n");
 		printf("s:set bit\n");
 		printf("c:clear bit\n");
@@ -16,22 +15,20 @@ int main(){
 	int data,bit,b;
 	char choice;
 	int flag=0,left,right;
-	while(1)
-	{
+	while(1){
 		printMenu();
 		// __fpurge(stdin);
 		scanf("%c",&choice);
-		if(flag==0)
-		{
+		if(flag==0){
 			printf("no data supplied\n");
 			    choice='i';
 		}
 		if((choice=='s')||(choice=='S'))
-		                   data|=(1<<bit);
+		    data|=(1<<bit);
 		else if((choice=='c')||(choice=='C'))
-		                   data&= ~(1<<bit);
+		    data&= ~(1<<bit);
 		else if((choice=='m')||(choice=='M'))
-		                   data^=(1<<bit);
+		    data^=(1<<bit);
 		else if((choice=='p')||(choice=='P')){
 			printf("data:%d   bitPosn:%d\n",data,bit);
 			printf("bin Eq of data:");
@@ -40,17 +37,14 @@ int main(){
 		}
 		else if((choice=='r') ||(choice=='R')){
 			for(left=31,right=0;left>right;left--,right++){
-				if(((data>>left)&1) != ((data>>right)&1))
-				{
+				if(((data>>left)&1) != ((data>>right)&1)){
 					data^=(1<<left);
 					data^=(1<<right);
 				}
 			}
 
 		}
-
-		else if(choice=='i')
-		{
+		else if(choice=='i'){
 			printf("Enter data:");
 			scanf("%d",&data);
 			printf("Enter bit:");
@@ -59,7 +53,7 @@ int main(){
 
 		}
 		else if((choice=='q')||(choice=='Q'))
-		           break;
+			break;
 		else 
 			printf("error:invalid entry\n");
 	}//while

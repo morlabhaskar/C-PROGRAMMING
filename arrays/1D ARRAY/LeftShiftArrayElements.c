@@ -1,5 +1,5 @@
 #include<stdio.h>
-void left_shift(int arr[],int n){
+void left_shift(int *arr,int n){
     int i;
     for(i=0;i<n-1;i++){
         arr[i] = arr[i+1];

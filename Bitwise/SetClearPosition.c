@@ -16,7 +16,7 @@ int modifyBit(int reg, int pos, char mode) {
     }
     return data;
 }
-int main() {
+int main(){
     int reg,pos;
     char mode;
     printf("Enter Number :\n");

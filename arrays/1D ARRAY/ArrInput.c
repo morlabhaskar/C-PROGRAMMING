@@ -21,11 +21,10 @@
 //  }
 
 #include<stdio.h>
- #include<stdlib.h>
- int main()
- {
-        srand(getpid()); // srand(seed)
-        int num;
-        num=rand()%10;
-        printf("%d\n",num);
- }
+#include<stdlib.h>
+int main(){
+    srand(getpid()); // srand(seed)
+    int num;
+    num=rand()%10;
+    printf("%d\n",num);
+}
