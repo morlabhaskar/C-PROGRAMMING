@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-int check_repeated(int arr[],int n,int num){
+int check_repeated(int *arr,int n,int num){
     int count=0;
     for(int i=0;i<n;i++){
         if(arr[i]==num){
@@ -10,7 +10,7 @@ int check_repeated(int arr[],int n,int num){
     if(count>=2) return 1;
     return 0;
 }
-int contain(int freq[],int ele,int len){
+int contain(int *freq,int ele,int len){
     for(int i=0;i<len;i++){
         if(freq[i]==ele){
             return 0;
