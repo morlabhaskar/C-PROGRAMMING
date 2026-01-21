@@ -16,7 +16,7 @@ int highest_set_bit(int reg) {
         }
     }
     for(int bit=high-1;bit>=0;bit--){
-            data &= ~(1<<bit);
+        data &= ~(1<<bit);
     }
     return data;
 }
