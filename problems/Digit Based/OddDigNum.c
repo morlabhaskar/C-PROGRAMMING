@@ -5,7 +5,6 @@ int main(){
     if(num<0){
         num = -num;
     }
-    
     while(num){
         if((num%10) % 2 != 0){
             printf("%d ",num%10);
