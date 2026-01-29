@@ -17,5 +17,5 @@ void save(char *filename){
         temp=temp->link;
     }
     fclose(fptr);
-     printf("Data saved to file successfully!\n");
+    printf("Data saved to file successfully!\n");
 }
