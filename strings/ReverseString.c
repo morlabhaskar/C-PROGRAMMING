@@ -17,20 +17,20 @@
 // }
 
 //Function is using String Pointer Addressing Method to modified the reverse string
-void reverse_string(char *ptr){
-    char *left = NULL,*right = NULL,temp;
-    left = ptr;
-    right = ptr+(strlen(ptr)-1);
-    while(left<right){
-        if((*left) != (*right)){
-            temp = *left;
-            *left = *right;
-            *right = temp;
-        }
-        left++;
-        right--;
-    }
-}
+// void reverse_string(char *ptr){
+//     char *left = NULL,*right = NULL,temp;
+//     left = ptr;
+//     right = ptr+(strlen(ptr)-1);
+//     while(left<right){
+//         if((*left) != (*right)){
+//             temp = *left;
+//             *left = *right;
+//             *right = temp;
+//         }
+//         left++;
+//         right--;
+//     }
+// }
 
 int main(){
     char str[30];

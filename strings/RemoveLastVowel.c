@@ -19,19 +19,11 @@ int main(){
     fgets(str,sizeof(str),stdin);
 
     if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
-    for(int i=strlen(str)-1;str[i];i--){
+    for(int i=0;str[i];i++){
         if(is_vowel(str[i])){
             memmove(str+i,str+i+1,strlen(str+i+1)+1);
             i--;
-            break;
         }
     }
     printf("%s\n",str);
-
-    // if(cnt == 0){
-    //     printf("There is No Vowels are in above Given String\n");
-    // }
-    // else{
-    //     printf("%s\n",str);
-    // }
 }

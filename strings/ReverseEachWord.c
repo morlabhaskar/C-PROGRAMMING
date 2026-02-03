@@ -4,10 +4,11 @@
 void reverse_word(char *p){
     char *left=p,*right=p+strlen(p)-1;
     while(left<right){
-        char temp = *left;
-        *left = *right;
-        *right = temp;
-        // *left ^= *right ^= *left ^= *right;
+        if(*left!=*right){
+            char temp = *left;
+            *left = *right;
+            *right = temp;
+        }
         left++;
         right--;
     }

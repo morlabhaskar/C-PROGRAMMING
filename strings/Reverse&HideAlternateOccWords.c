@@ -4,7 +4,9 @@
 void reverse_word(char *ptr){
     char *left = ptr,*right = ptr+strlen(ptr)-1;
     while(left<right){
-        *left ^= *right ^= *left ^= *right;
+        if(*left!=*right){
+            *left ^= *right ^= *left ^= *right;
+        }
         left++;
         right--;
     }
@@ -24,8 +26,12 @@ int main(){
     ptr = str;
     ptr = strtok(ptr," ");
     while (ptr != NULL){
-        if(count%2 == 0) reverse_word(ptr);
-        else hide_word(ptr);
+        if(count%2 == 0){
+            reverse_word(ptr);
+        }
+        else{
+            hide_word(ptr);
+        }
         count++;
         ptr = strtok(NULL," ");
     }

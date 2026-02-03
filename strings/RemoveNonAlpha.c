@@ -27,7 +27,6 @@ int main(){
             i--;
         }
     }
-    
     if(cnt == 0){
         printf("There is No Non Alphabets are Present above Given String\n");
     }

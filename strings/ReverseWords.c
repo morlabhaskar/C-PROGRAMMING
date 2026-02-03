@@ -34,6 +34,6 @@ int main(){
         ptr = strtok(NULL," ");
     }
     replace_null_with_space(str,len);
-    printf("%s\n",str);
-    
+    printf("%s\n",str); 
 }
+
