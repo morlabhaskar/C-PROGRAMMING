@@ -17,10 +17,9 @@ int main(){
     int i,j=0;
     printf("Enter a String :\n");
     fgets(str,sizeof(str),stdin);
-    
     if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
     ptr=str;
-    for(i=0;str[i]!='\0';i++){
+    for(i=0;str[i];i++){
         if(is_vowel(str[i])){
             temp = str[i];
             memmove(ptr+j+1,ptr+j,i-j);

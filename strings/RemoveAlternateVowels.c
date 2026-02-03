@@ -1,4 +1,4 @@
-//wap to print Alternate vowels in the given string
+//wap to remove Alternate vowels in the given string
 #include<stdio.h>
 #include<string.h>
 #include<ctype.h>
@@ -28,7 +28,6 @@ int main(){
             }
             cnt++;
         }
-        
     }
     printf("%s\n",str);
 }

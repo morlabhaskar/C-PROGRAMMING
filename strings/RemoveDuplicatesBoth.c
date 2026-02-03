@@ -8,13 +8,18 @@ int main(){
     if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
 
     for(int i=0;str[i];i++){
+        int flag=0;
         for(int j=i+1;str[j];j++){
             if(str[i]==str[j]){
+                flag=1;
                 memmove(str+j,str+j+1,strlen(str+j+1)+1);
                 j--;
             }
         }
-        memmove(str+i,str+i+1,strlen(str+i+1)+1);
+        if(flag){
+            memmove(str+i,str+i+1,strlen(str+i+1)+1);
+            i--;
+        }
     }
     printf("%s\n",str);
 }

@@ -30,7 +30,6 @@ int main(){
             flag=0;
             char *num=number_to_string(str[i]);
             int len=strlen(num);
-            // printf("%d\n",len);
             memmove(str+i+len,str+i+1,strlen(str+i));
             strncpy(str+i,num,strlen(num));
             i += len-1;

@@ -12,16 +12,15 @@ int palindrome(char *p){
         left++;
         right--;
     }
-    if (flag) return 1;
-    return 0;
+    return flag ? 1 : 0;
 }
 int main(){
     char str[100];
     int count = 2,res=0;
     printf("Enter a String :\n");
     fgets(str, sizeof(str), stdin);
-    
     if (str[strlen(str) - 1] == '\n') str[strlen(str) - 1] = '\0';
+
     while(count<strlen(str)+1){
         for(int i=0;i<=strlen(str)-count;i++){
             int cnt=0;

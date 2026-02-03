@@ -15,7 +15,7 @@ int is_vowel(char ch){
 }
 int main(){
     char str[30];
-    int flag=1,cnt=0;
+    int cnt=0;
     printf("Enter a String :\n");
     fgets(str,sizeof(str),stdin);
 
@@ -23,10 +23,10 @@ int main(){
 
     printf("%s\n",str);
     for(int i=0;str[i];i++){
-        if(is_vowel(str[i]) && flag){
+        if(is_vowel(str[i])){
             memmove(str+i,str+i+1,strlen(str+i)+1);
-            flag=0;
             cnt++;
+            break;
         }
     }
     if(cnt == 0){

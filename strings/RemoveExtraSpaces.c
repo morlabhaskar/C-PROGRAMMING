@@ -32,7 +32,9 @@ int main(){
     if(str[strlen(str)-1]=='\n') str[strlen(str)-1]='\0';
     //check empty string or not.
     for(int i=0;str[i];i++){
-        if(str[i]!=' ') flag=0;
+        if(str[i]!=' '){
+            flag=0;
+        }
     }
     ptr=str;
     for(int i=0;str[i];i++){

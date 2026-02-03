@@ -6,9 +6,7 @@ int main(){
     char *ptr = NULL;
     printf("Enter a String :\n");
     fgets(str,sizeof(str),stdin);
-
     if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
-
     ptr=str;
     while((*ptr)==' '){
         memmove(ptr,ptr+1,strlen(ptr+1)+1);
