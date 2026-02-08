@@ -1,4 +1,4 @@
-//WAP to check the sum of the odd digits in element is prime
+//WAP to check the sum of the odd digits of element is prime
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
@@ -33,7 +33,6 @@ int odd_digits_sum(int num){
         return 1;
     }
     return 0;
-    
 }
 int main(){
     int arr[10];
@@ -44,7 +43,7 @@ int main(){
     // }
     // printf("\n");
     for(int j=0;j<10;j++){
-            printf("%d ",arr[j]);
+        printf("%d ",arr[j]);
     }
     printf("\n");
     for(int j=0;j<10;j++){

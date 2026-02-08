@@ -3,7 +3,7 @@ int main(){
     int num,count=0,temp=0;
     scanf("%d",&num);//238
     for(int bit=31;bit>=0;bit--){
-        printf("%d ",(num>>bit)&1);
+        printf("%d",(num>>bit)&1);
         if((num>>bit)&1){
             temp++;
         }else{

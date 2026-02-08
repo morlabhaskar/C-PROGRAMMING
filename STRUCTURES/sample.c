@@ -1,17 +1,17 @@
-// #include <stdio.h>
+#include <stdio.h>
 
 // struct Point {
 //     int x;
-//     int y;
+//     double y;
 // };
 
 // int main() {
 //     struct Point p1 = {1, 2};
-//     printf("%d %d", p1.x, p1.y);
+//     printf("%d %lu", p1.x, p1.y);
 //     return 0;
 // }
 
-#include <stdio.h>
+// #include <stdio.h>
 //     struct course
 //     {
 //         int courseno;
@@ -19,9 +19,7 @@
 //     };
 // int main()
 // {
-//     struct course c[] = { {102, "C"},
-//                           {103, "ARM"},
-//                           {104, "LINUX"}     };
+//     struct course c[] = {{102, "C"},{103, "ARM"},{104, "LINUX"}};
 //     printf("%d ", c[1].courseno);
 //     printf("%s\n", (*(c+2)).coursename);
 //     return 0;

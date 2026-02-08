@@ -13,6 +13,5 @@ int main(){
     scanf("%d",&student.age);
     printf("Name is %s\n",student.name);
     printf("Age is %d\n",student.age);
-    
 }
 

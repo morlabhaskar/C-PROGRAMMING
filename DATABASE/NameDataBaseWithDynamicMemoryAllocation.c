@@ -11,8 +11,7 @@ void printMenu() {
     printf("        i : Input Record\n");
     printf("        p : Print All Records\n");
     printf("        f : Find a Record\n");
-    printf("        o : Sort Records\n");
-    printf("        s : Save Records\n");
+    printf("        s : Sort Records\n");
     printf("        d : Delete a Record\n");
     printf("        q : Quit\n");
     printf("=========================================\n");
@@ -122,7 +121,7 @@ int main(){
             case 'i':names=input(names);break;
             case 'p':print(names);break;
             case 'd':names=delete(names);break;
-            case 'o':sort(names);break;
+            case 's':sort(names);break;
             case 'f':find(names);break;
             case 'q':
                 for(int i=0;i<count;i++) free(names[i]);

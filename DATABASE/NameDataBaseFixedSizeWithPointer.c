@@ -18,8 +18,8 @@ void printMenu() {
     printf("Enter your choice:\n");
 }
 void *input(char (*ptr)[20]){
-    printf("Enter a Name :\n");
     ptr = realloc(ptr,(count+1)*sizeof(*ptr));
+    printf("Enter a Name :\n");
     fgets(ptr[count],sizeof(ptr[count]),stdin);
     if(ptr[count][strlen(ptr[count])-1]=='\n') ptr[count][strlen(ptr[count])-1]='\0';
     count++;
