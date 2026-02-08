@@ -54,7 +54,7 @@ char* my_itoa(int num, char* str, int base) {
         str[i] = '\0';
         return str;
     }
-    // Handle negative numbers for base 10
+    // Handle negative numbers for decimal
     if (num < 0 && base == 10) {
         isNegative = 1;
         num = -num;

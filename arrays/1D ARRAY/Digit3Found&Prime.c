@@ -27,8 +27,9 @@ int main(){
     int arr[10],n=10;
     printf("Enter %d Array Elements :\n",n);
     srand(time(0));
-    for(int i=0;i<n;i++)
+    for(int i=0;i<n;i++){
         arr[i] = rand()%(100-10+1)+10;//rand()%(MAX-MIN+1)+MIN
+    }
     printf("Array Elements are :\n");
     for(int i=0;i<n;i++)
         printf("%d,",arr[i]);

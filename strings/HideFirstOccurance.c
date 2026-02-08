@@ -1,7 +1,6 @@
 //wap to Hide the first occurance of given charcter in the given string
 #include<stdio.h>
 #include<string.h>
-
 char* my_strchr(char *ptr,char ch){
     while((*ptr) != '\0'){
         if((*ptr)==ch){
@@ -11,7 +10,6 @@ char* my_strchr(char *ptr,char ch){
     }
     return NULL;
 }
-
 int main(){
     char str[30],ch;
     char *ptr = NULL;

@@ -20,24 +20,22 @@ int main(){
     int count = 0, flag = 0;
     printf("Enter a String :\n");
     fgets(str, sizeof(str), stdin);
-
-    if (str[strlen(str) - 1] == '\n') str[strlen(str) - 1] = '\0';
-    
-    for (int i = 0; str[i]; i++){
-        if (str[i] != ' '){
+    if(str[strlen(str) - 1] == '\n') str[strlen(str) - 1] = '\0';
+    for(int i = 0; str[i]; i++){
+        if(str[i] != ' '){
             flag = 1;
             break;
         }
     }
     ptr = str;
     ptr = strtok(ptr," ");
-    if (flag == 0) printf("empty string");
+    if(flag == 0) printf("empty string");
     else{
-        while (ptr != NULL){
-            if (palindrome(ptr)) count++;
+        while(ptr != NULL){
+            if(palindrome(ptr)) count++;
             ptr = strtok(NULL, " ");
         }
     }
-    if (count == 0 && flag) printf("No Palindrome Words in the given string\n");
+    if(count == 0 && flag) printf("No Palindrome Words in the given string\n");
     if(count!=0 && flag) printf("Palindrome Words are : %d\n", count);
 }

@@ -1,4 +1,4 @@
-//wap to remove all the vowels from the given string
+//wap to find first and last vowels in the given string
 #include<stdio.h>
 #include<string.h>
 #include<ctype.h>
@@ -13,7 +13,6 @@ int is_vowel(char ch){
     }
     return 0;
 }
-
 char print_first_vowel(char *str){
     for(int i=0;str[i];i++){
         if(is_vowel(str[i])){
@@ -23,7 +22,6 @@ char print_first_vowel(char *str){
         }
     }
 }
-
 char print_last_vowel(char *str){
     for(int i=strlen(str)-1;str[i];i--){
         if(is_vowel(str[i])){
@@ -33,14 +31,11 @@ char print_last_vowel(char *str){
         }
     }
 }
-
 int main(){
     char str[30];
     char first,last;
     printf("Enter a String :\n");
     fgets(str,sizeof(str),stdin);
-
-    //For removing '\n' before the '\0' character
     if(str[strlen(str)-1] == '\n'){
         str[strlen(str)-1] = '\0';
     }

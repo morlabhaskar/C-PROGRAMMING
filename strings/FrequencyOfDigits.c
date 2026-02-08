@@ -1,3 +1,4 @@
+//WAP to count number of frequency numbers in the given string
 #include <stdio.h>
 #include <string.h>
 int frequency_count(char *str,int n){

@@ -21,13 +21,23 @@ int main(){
     if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
     printf("Enter the Character :\n");
     ch = getchar();
-    for(int i=0;str[i];i++){
-        if(str[i]==ch){
-            if(cnt%2==0){
-                str[i] = '*';
-            }
+    // for(int i=0;str[i];i++){
+    //     if(str[i]==ch){
+    //         if(cnt%2==0){
+    //             str[i] = '*';
+    //         }
+    //         cnt++;
+    //     }
+    // }
+    char *ptr=str;
+    while(*ptr){
+        if(*ptr==ch){
             cnt++;
+            if(cnt%2==1){
+                memset(ptr,'*',1);
+            }
         }
+        ptr++;
     }
     printf("%s\n",str);
 }

@@ -5,7 +5,7 @@ void main(){
     char s[30];
     printf("Enter a String :");
     gets(s);
-    // strlwr(s);
-    strupr(s);
+    strlwr(s);
+    // strupr(s);
     printf("After : %s",s);
 }

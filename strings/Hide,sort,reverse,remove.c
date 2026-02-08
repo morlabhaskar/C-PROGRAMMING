@@ -1,4 +1,4 @@
-//WAP to Hide First Occurance,sort Second Occurance,Reverse Third Occurance and remove all SubStrings in a given String
+//WAP to Hide First Occurance,sort Second Occurance,Reverse Third Occurance and remove remaining SubStrings in a given String
 #include<stdio.h>
 #include<string.h>
 void reverse_substring(char *rev){

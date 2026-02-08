@@ -4,12 +4,8 @@ int main(){
     int n,*arr,sub,MaxSum=0;
     printf("No of Array Elements :\n");
     scanf("%d",&n);
-    if(n<0){
+    if(n<=0){
         printf("No of elements are invalid"); 
-        return 0;
-    }
-    else if(n==0){
-        printf("invalid size"); 
         return 0;
     }
     arr=(int*)malloc(n*sizeof(int));

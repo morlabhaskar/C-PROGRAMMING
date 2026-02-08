@@ -1,6 +1,6 @@
 //Remove Element at Perticular Position in an Array.
 #include<stdio.h>
-void remove_element_at_position(int arr[],int n,int pos){
+void remove_element_at_position(int *arr,int n,int pos){
     int i;
     for(i=0;i<n-1;i++){
         if(i>=pos-1){

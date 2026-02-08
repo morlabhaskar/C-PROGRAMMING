@@ -23,9 +23,7 @@ int main(){
     for(int i=0;i<n;i++){
         printf("%d ",arr[i]);
     }
-
     bubble_sort(arr,n);
-
     printf("\nAfter Sorting Elements are :\n");
     for(int i=0;i<n;i++){
         printf("%d ",arr[i]);

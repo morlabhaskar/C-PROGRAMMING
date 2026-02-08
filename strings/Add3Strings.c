@@ -3,7 +3,7 @@
 int main(){
     char s1[30],s2[30],s3[30],s4[100];
     printf("Enter a String1 :\n");
-    fgets(s1,sizeof(s1),stdin);
+    fgets(s1,sizeof(s1),stdin);//abc
 
     printf("Enter a String2 :\n");
     fgets(s2,sizeof(s2),stdin);

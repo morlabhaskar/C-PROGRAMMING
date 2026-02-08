@@ -6,10 +6,8 @@ int main(){
     char *ptr = NULL;
     printf("Enter a String :\n");
     fgets(str,sizeof(str),stdin);
-
     printf("Enter a SubString :\n");
     fgets(sub,sizeof(sub),stdin);
-
     if(str[strlen(str)-1] == '\n') str[strlen(str)-1] = '\0';
     if(sub[strlen(sub)-1] == '\n') sub[strlen(sub)-1] = '\0';
     

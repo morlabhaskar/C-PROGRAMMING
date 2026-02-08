@@ -30,7 +30,9 @@ int main(){
     }
     arr=(int*)malloc(n*sizeof(int));
     printf("Enter %d Array Elements :\n",n);
-    for(int i=0;i<n;i++) scanf("%d",&arr[i]);
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
     printf("Enter Shift Type \nLeft:\'l\' \nRight:\'r\'\n");
     scanf(" %c",&type);// space before %c to consume newline
     printf("How many times you want Shift :\n");
@@ -41,4 +43,5 @@ int main(){
     }
     printf("Shifted Array is :\n");
     for(int i=0;i<n;i++) printf("%d ",arr[i]);
+    free(arr);
 }

@@ -22,11 +22,11 @@ int main(){
     int n,*arr,flag=1,freq[2]={0},cnt=0; //2 2 2 3 4 5 2 5 6 2
     printf("Enter Size :\n");
     scanf("%d",&n);
-    arr=(int*)malloc(n*sizeof(int));
     if(n<=0){
         printf("invalid size");
         return 0;
     }
+    arr=(int*)malloc(n*sizeof(int));
     printf("Enter Array Elements :\n");
     for(int i=0;i<n;i++){
         // scanf("%d",arr+i);

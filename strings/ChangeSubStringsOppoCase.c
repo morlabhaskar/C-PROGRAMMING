@@ -23,8 +23,12 @@ int lowercase(char ch){
 void change_substring_case(char *ptr,char *sub){
     char *p=ptr;
     for(int i=0;i<strlen(sub);i++){
-        if(lowercase(*p)) *p=*p-32;
-        else *p=*p+32;
+        if(lowercase(*p)){
+            *p=*p-32;
+        }
+        else{
+            *p=*p+32;
+        }
         *p++;
     }
     // printf("%s\n",ptr);

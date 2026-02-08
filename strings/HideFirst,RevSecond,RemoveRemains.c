@@ -1,4 +1,4 @@
-//WAP to Hide First Occurance substring,Reversse second and Remove Remains Substrings in a given string.
+//WAP to Hide First Occurance substring,Reversse second, and Remove Remains Substrings in a given string.
 #include<stdio.h>
 #include<string.h>
 int main(){

@@ -10,7 +10,7 @@ int main(){
     for(i=0 ;i<5 ;i++){
         scanf("%d",&b[i]);
     }
-    for(i=0 ;i<5 ;i++){
+    for(i=0;i<5;i++){
         c[i] = a[i] + b[i];
         printf("Third %d\n",c[i]);
     }

@@ -4,7 +4,7 @@
 #include<stdlib.h>
 #include<time.h>
 
-int check_repeated(int arr[],int i){
+int check_repeated(int *arr,int i){
     for(int j=0;j<i;j++){
         if(arr[i] == arr[j]){
             return 1;

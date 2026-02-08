@@ -597,16 +597,39 @@
 //     printf("%d",c);
 // }
 
-int main(){
-    int i = 5;
-    int a = ++i;
-    int a = i++;
-    printf("%d\n",i);
-    printf("%d",a);
-    printf("%d\n",++i);
-    printf("%d",i++);
-}
+// int main(){
+//     int i = 5;
+//     int a = ++i;
+//     int a = i++;
+//     printf("%d\n",i);
+//     printf("%d",a);
+//     printf("%d\n",++i);
+//     printf("%d",i++);
+// }
 
+// #include <stdio.h>
+// int main(void)
+// {
+//     if (printf("Hello World"))
+//     {
+//     }
+// }
+
+#include <stdio.h>
+void printNos(unsigned int n)
+{
+  if(n > 0)
+  {
+    printNos(n-1);
+    printf("%d ",  n);
+  } 
+}
+int main(void)
+{
+    int n;
+    scanf("%d",&n);
+    printNos(n);
+}
 
 
 
