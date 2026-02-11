@@ -5,7 +5,6 @@ struct Node{
     int data;
     struct Node* next;
 };
-
 struct Node* head = NULL;
 
 struct Node* createNode(int value){
