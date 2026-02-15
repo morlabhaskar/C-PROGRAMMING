@@ -1,3 +1,4 @@
+//WAP to swap two variables without 3rd variable
 #include<stdio.h>
 void swap(int *a,int *b){
     // *a^=*b^=*a^=*b;

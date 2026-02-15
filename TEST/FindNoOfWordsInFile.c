@@ -5,12 +5,12 @@
 int main(){
     FILE *fptr=NULL;
     char str[100],temp[100],*ptr=NULL;
+    int cnt=0;
     fptr=fopen("dest.txt","r");
     if(fptr==NULL){
         printf("File Not Opened!\n");
         exit(0);
     }
-    int cnt=0;
     while(fgets(str,sizeof(str),fptr)){
         str[strlen(str)-1]='\0';
         strcpy(temp,str);

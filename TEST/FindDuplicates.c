@@ -1,3 +1,4 @@
+//WAP to find Duplicate elements in a given array
 #include<stdio.h>
 int find_duplicates(int *arr,int len){
     int flag=0;

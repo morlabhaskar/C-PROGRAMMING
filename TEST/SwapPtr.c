@@ -1,3 +1,4 @@
+//WAP to swap 2 variables with using pointer
 #include<stdio.h>
 void swap(int *a,int *b){
     int temp=*a;
