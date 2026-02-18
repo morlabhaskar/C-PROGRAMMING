@@ -1,11 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #define size 5
-
 int stack[size];
 int top = -1;
-
-
 void push(){
     if(top == size-1)
         printf("Stack is Full!\n");
@@ -18,17 +15,14 @@ void push(){
         printf("Push Operation is Success\n");
     }
 }
-
 void pop(){
     if(top == -1)
         printf("Stack is Empty!\n");
     else{
         top--;
         printf("Pop Operation is Success\n");
-        
     }
 }
-
 void peek(){
     if(top == -1)
         printf("Stack is Empty!\n");
@@ -36,7 +30,6 @@ void peek(){
         printf("Peek Value is :%d\n",stack[top]);
     }
 }
-
 void display(){
     if(top == -1)
         printf("Stack is Empty!\n");
@@ -48,14 +41,12 @@ void display(){
         printf("]");
     }
 }
-
 int main(){
-    printf("Stack Implimentation :\n");
+    printf("Stack Implimentation Using Array :\n");
     while(1){
         int option;
         printf("\nOptions : 1)push 2)pop 3)peek  4)display  5)exit\nEnter option :\n");
         scanf("%d",&option);
-
         if(option == 1)
             push();
         else if(option == 2)  

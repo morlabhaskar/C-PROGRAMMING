@@ -1,5 +1,5 @@
 #include<stdio.h>
-int linear(int arr[], int size, int tar){
+int linear(int *arr, int size, int tar){
     for(int i=0;i<size;i++){
         if(arr[i] == tar){
             return i;

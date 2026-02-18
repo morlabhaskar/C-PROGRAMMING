@@ -25,6 +25,7 @@ void findMid(){
         return;
     }
     NODE *fast=head,*slow=head;
+    //check for only 2 nodes present
     if((fast->link->link)==NULL){
         printf("Middle Nodes are %d & %d\n",fast->data,fast->link->data);
         return;

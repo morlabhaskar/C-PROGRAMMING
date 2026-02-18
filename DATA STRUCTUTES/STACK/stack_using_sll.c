@@ -46,6 +46,7 @@ void peek(){
     }
 }
 int main(){
+    printf("Stack Implimentation Using Linked List :\n");
     int choice;
     while(1){
         printf("\n1:push   2:pop  3:peek  4:quit\n");

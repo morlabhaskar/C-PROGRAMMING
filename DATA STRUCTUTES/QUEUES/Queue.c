@@ -20,7 +20,6 @@ void Enqueue(){
         printf("\nEnqueue operation is Success!\n");
     }
 }
-
 void Dequeue(){
     if(front == -1 || front > rear){
         printf("Queue is Empty!\n");
@@ -31,7 +30,6 @@ void Dequeue(){
 
     }
 }
-
 void Peek(){
     if(front == -1 || front > rear)
         printf("Queue is Empty!\n");
@@ -39,7 +37,6 @@ void Peek(){
         printf("Peek Value is :%d\n",queue[front]);
     }
 }
-
 void Display(){
     if(front == -1 || front > rear){
         printf("Queue is Empty!\n");
@@ -53,7 +50,6 @@ void Display(){
         printf("\n");
     }
 }
-
 int main(){
     int option;
     
