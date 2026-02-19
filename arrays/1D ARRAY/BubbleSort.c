@@ -12,6 +12,7 @@ void bubble_sort(int *arr,int len){
         }
     }
 }
+
 int main(){
     int arr[5],n;
     printf("Enter N number of Elements :\n");

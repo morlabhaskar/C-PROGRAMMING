@@ -21,7 +21,7 @@ int main(){
 		scanf("%c",&choice);
 		if(flag==0){
 			printf("no data supplied\n");
-			    choice='i';
+			choice='i';
 		}
 		if((choice=='s')||(choice=='S'))
 		    data|=(1<<bit);
@@ -42,7 +42,6 @@ int main(){
 					data^=(1<<right);
 				}
 			}
-
 		}
 		else if(choice=='i'){
 			printf("Enter data:");
@@ -56,8 +55,8 @@ int main(){
 			break;
 		else 
 			printf("error:invalid entry\n");
-	}//while
-}//main
+	}
+}
 
 
 
