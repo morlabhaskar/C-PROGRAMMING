@@ -17,15 +17,36 @@
 // }
 
 //using char pointer
+// #include<stdio.h>
+// int main(){
+//     char str[32];
+//     float f=23.4f;
+//     char *cp = (char *)&f;
+//     for(int i=0;i<4;i++){
+//         str[i]=cp[i];
+//     }
+//     printf("Binary : ",str);
+//     for(int i=0;i<4;i++){
+//         for(int j=7;j>=0;j--){
+//             printf("%d",(str[i]>>j)&1);
+//         }
+//         printf(" ");
+//     }
+// }
+
+
 #include<stdio.h>
 int main(){
-    char str[32];
-    float f=12.5f;
-    char *cp = (char *)&f;
+    float num=23.4;
+    char *ch = (char*)&num;
+    char str[5];
     for(int i=0;i<4;i++){
-        str[i]=cp[i];
+        str[i]=ch[i];
     }
-    printf("Binary : ",str);
+    str[4]='\0';
+    printf("String is :\n");
+    printf("%s\n",str);
+    printf("Binary is :\n");
     for(int i=0;i<4;i++){
         for(int j=7;j>=0;j--){
             printf("%d",(str[i]>>j)&1);
@@ -33,3 +54,21 @@ int main(){
         printf(" ");
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

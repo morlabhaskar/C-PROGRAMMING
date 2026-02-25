@@ -35,7 +35,7 @@
 
 #include <stdio.h>
 #include <string.h>
-// Function to reverse a string (helper function)
+// reverse a string
 void reverse(char str[]) {
     int len = strlen(str);
     for (int i = 0; i < len / 2; i++) {
@@ -60,7 +60,7 @@ char* my_itoa(int num, char* str, int base) {
         num = -num;
     }
     // Process digits
-    while (num != 0) {
+    while(num) {
         int rem = num % base;
         str[i++] = (rem > 9) ? (rem - 10) + 'A' : rem + '0';
         num = num / base;

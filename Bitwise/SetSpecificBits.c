@@ -1,3 +1,4 @@
+//WAP to set perticular bits from position to length
 #include <stdio.h>
 void int_to_binary(int data){
     for(int bit=31;bit>=0;bit--){
