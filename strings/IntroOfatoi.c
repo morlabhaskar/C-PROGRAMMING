@@ -1,9 +1,9 @@
-//atoi() stands for ASCII to Integer — it’s a C library function used to convert a 
+//atoi() stands for ASCII to Integer — it’s a C library function used to convert a
 //string (containing digits) into an integer.
 //int atoi(const char *str);
 #include<stdio.h>
 #include<stdlib.h>
-int is_digit(char dig){//'a'
+int is_digit(char dig){
     if(dig>='0' && dig<='9') return 1;
     return 0;
 }
