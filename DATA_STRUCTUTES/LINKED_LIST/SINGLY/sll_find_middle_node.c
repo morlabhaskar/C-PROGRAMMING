@@ -35,7 +35,7 @@ void findMid(){
         slow=slow->link;
     }
     if((fast->link)!=NULL){
-        printf("Middle Nodes are %d & %d\n",slow->data,fast->data);
+        printf("Middle Nodes are %d & %d\n",slow->data,slow->link->data);
         return;
     }
     else{

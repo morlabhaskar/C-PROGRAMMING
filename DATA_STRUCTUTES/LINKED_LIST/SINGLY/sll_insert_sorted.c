@@ -44,6 +44,23 @@ void displayNodes(){
         temp=temp->link;
     }
 }
+void freeup(){
+    if(head==NULL){
+        return;
+    }
+    if(head->link==NULL){
+        free(head);
+        return;
+    }
+    NODE *temp=head;
+    while(temp->link!=NULL){
+        temp=temp->link;
+        free(head);
+        head=temp;
+    }
+    free(head);
+    printf("Free Success\n");
+}
 int main(){
     char ch;
     while(1){
@@ -61,6 +78,7 @@ int main(){
                 displayNodes();
                 break;
             case 'q':
+                freeup();
                 printf("Byee\n");
                 exit(0);
             default:

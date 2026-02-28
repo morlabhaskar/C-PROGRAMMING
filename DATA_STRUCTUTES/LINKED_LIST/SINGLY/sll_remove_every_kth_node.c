@@ -37,6 +37,23 @@ void printList(NODE *ptr){
         temp=temp->link;
     }
 }
+void freeup(NODE *head){
+    if(head==NULL){
+        return;
+    }
+    if(head->link==NULL){
+        free(head);
+        return;
+    }
+    NODE *temp=head;
+    while(temp->link!=NULL){
+        temp=temp->link;
+        free(head);
+        head=temp;
+    }
+    free(head);
+    printf("Free Success\n");
+}
 int main(){
     NODE *head=NULL;
     head=createNode(10);
@@ -48,4 +65,5 @@ int main(){
     // head->link->link->link->link->link->link=createNode(70);
     head=delKthNodes(head,3);
     printList(head);
+    freeup(head);
 }
