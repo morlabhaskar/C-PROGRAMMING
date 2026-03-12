@@ -1,5 +1,5 @@
 //Cube of a number
-#include <stdio.h>
+// #include <stdio.h>
 // int main(){
 //     int number;
 //     printf("Enter a Number:");
@@ -615,20 +615,47 @@
 //     }
 // }
 
-#include <stdio.h>
-void printNos(unsigned int n)
-{
-  if(n > 0)
-  {
-    printNos(n-1);
-    printf("%d ",  n);
-  } 
-}
-int main(void)
-{
-    int n;
-    scanf("%d",&n);
-    printNos(n);
+// #include <stdio.h>
+// void printNos(unsigned int n)
+// {
+//   if(n > 0)
+//   {
+//     printNos(n-1);
+//     printf("%d ",  n);
+//   } 
+// }
+// int main(void)
+// {
+//     int n;
+//     scanf("%d",&n);
+//     printNos(n);
+// }
+
+#include<stdio.h>
+int main(){
+    // int num,digit;
+    // int small_value = 9;//1
+    // int sec_small_value = 9;//2
+
+    // printf("enter the num value: ");
+    // scanf("%d",&num);//54321
+
+    // while(num!=0){                 
+    //     digit = num%10;//5
+    //     num/=10;
+    //     if(digit<small_value){
+    //         sec_small_value = small_value;
+    //         small_value = digit;     
+    //     }
+    //     else if(digit<sec_small_value && digit!= small_value){   
+    //         sec_small_value = digit;
+    //     }
+    // }
+    // printf("%d second smallest value ",sec_small_value);
+    // return 0;
+    for(int i=0;;i++){
+        printf("%d ",i);
+    }
 }
 
 
